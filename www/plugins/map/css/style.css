@@ -1,0 +1,241 @@
+.legend {
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: rgba(255,255,255, 0.9);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 6px 8px;
+  width: 180px;
+  line-height: 18px;
+  color: #555;
+}
+
+.legend .outline {
+  border: 0;
+}
+
+.legend i {
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+.search-tip {
+  white-space: nowrap;
+}
+
+/**********
+   Map network: Peer items
+**********/
+
+.leaflet-popup .item-peer {
+  padding-top: 9px;
+  padding-bottom: 3px;
+}
+
+.leaflet-popup .item.item-icon-left > i.avatar:first-child {
+  left: 9px;
+  top: 0;
+}
+
+.leaflet-popup .item-peer .badge {
+  top: inherit;
+  bottom: 0px;
+  right: 5px;
+  font-size: 12px;
+}
+
+.leaflet-popup .item-peer .badge.badge-secondary,
+.leaflet-popup .item-peer .badge .badge-secondary {
+  top: inherit;
+  bottom: -16px;
+  right: 5px;
+  font-size: 9px;
+  padding-right: 0px;
+}
+
+.leaflet-popup .item-peer {
+  padding-top: 0px;
+}
+
+/**
+ * Network MAP
+ */
+.view-map-network .leaflet-popup-content{
+  max-height: 250px
+}
+.view-map-network .leaflet-popup-content .item-peer .row {
+  display: block;
+}
+.view-map-network .leaflet-popup-content .item-peer .col.col-15 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 15%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 15%;
+  -ms-flex: 0 0 15%;
+  flex: 0 0 15%;
+  max-width: 70px;
+  text-align: start !important;
+}
+.view-map-network .leaflet-popup-content .item-peer .col.col-20 {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 20%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 0 20%;
+  -ms-flex: 0 0 20%;
+  flex: 0 0 20%;
+  max-width: 70px;
+  text-align: start !important;
+}
+
+/**
+ * WOT map
+ */
+.view-map-wot .leaflet-popup-content{
+  min-width: 200px;
+}
+
+.view-map-wot .leaflet-popup-content .item-avatar .item-image {
+  left: 0px;
+}
+.view-map-wot .leaflet-popup-content .item-avatar .item-content {
+  padding-left: 70px;
+}
+
+/**
+ * registry map
+ */
+.view-map-registry .leaflet-popup-content{
+  min-width: 200px;
+}
+
+.view-map-registry .leaflet-popup-content .item-avatar .item-image {
+  left: 0px;
+}
+.view-map-registry .leaflet-popup-content .item-avatar .item-content {
+  padding-left: 70px;
+}
+
+/**
+ * Marker colors
+ */
+
+/* blue cluster marker */
+.marker-cluster-small.blue {
+  background-color: rgba(56, 170, 221, 0.6);
+}
+.marker-cluster-small.blue div {
+  background-color: rgba(37, 144, 193, 0.9);
+  color: white;
+}
+.marker-cluster-medium.blue {
+  background-color: rgba(37, 144, 193, 0.6);
+}
+.marker-cluster-medium.blue div {
+  background-color: rgba(18, 121, 167, 0.9);
+  color: white;
+}
+.marker-cluster-large.blue {
+  background-color: rgba(18, 121, 167, 0.6);
+}
+.marker-cluster-large.blue div {
+  background-color: rgba(0, 99, 141, 0.9);
+  color: white;
+}
+
+/* green cluster marker */
+.marker-cluster-small.green {
+  background-color: rgba(110, 170, 37, 0.6);
+}
+.marker-cluster-small.green div {
+  background-color: rgba(92, 150, 19, 0.9);
+  color: white;
+}
+.marker-cluster-medium.green {
+  background-color: rgba(92, 150, 19, 0.6);
+}
+.marker-cluster-medium.green div {
+  background-color: rgba(71, 126, 1, 0.9);
+  color: white;
+}
+.marker-cluster-large.green {
+  background-color: rgba(171, 126, 1, 0.6);
+}
+.marker-cluster-large.green div {
+  background-color: rgba(51, 103, 0, 0.9);
+  color: white;
+}
+
+
+
+/* lightgreen cluster marker */
+.marker-cluster-small.lightgreen {
+  background-color: rgba(187, 249, 112, 0.4);
+}
+.marker-cluster-small.lightgreen div {
+  background-color: rgba(162, 221, 90, 0.8);
+  color: gray;
+}
+.marker-cluster-medium.lightgreen {
+  background-color: rgba(162, 221, 90, 0.6);
+}
+.marker-cluster-medium.lightgreen div {
+  background-color: rgba(136, 192, 69, 0.8);
+  color: white;
+}
+.marker-cluster-large.lightgreen {
+  background-color: rgba(136, 192, 69, 0.6);
+}
+.marker-cluster-large.lightgreen div {
+  background-color: rgba(115, 168, 49, 0.8);
+  color: white;
+}
+
+
+/* lightgray cluster marker */
+.marker-cluster-small.lightgray {
+  background-color: rgba(163, 163, 163, 0.6);
+}
+.marker-cluster-small.lightgray div {
+  background-color: rgba(163, 163, 163, 0.9);
+  color: white;
+}
+.marker-cluster-medium.lightgray {
+  background-color: rgba(139, 139, 139, 0.6);
+}
+.marker-cluster-medium.lightgray div {
+  background-color: rgba(139, 139, 139, 0.9);
+  color: white;
+}
+.marker-cluster-large.lightgray {
+  background-color: rgba(116, 116, 116, 0.6);
+}
+.marker-cluster-large.lightgray div {
+  background-color: rgba(116, 116, 116, 0.9);
+  color: white;
+}
+
+
+/* red cluster marker */
+.marker-cluster-small.red {
+  background-color: rgba(212, 62, 42, 0.4);
+}
+.marker-cluster-small.red div {
+  background-color: rgba(186, 42, 23, 0.8);
+  color: white;
+}
+.marker-cluster-medium.red {
+  background-color: rgba(186, 42, 23, 0.6);
+}
+.marker-cluster-medium.red div {
+  background-color: rgba(161, 23, 5, 0.8);
+  color: white;
+}
+.marker-cluster-large.red {
+  background-color: rgba(161, 23, 5, 0.6);
+}
+.marker-cluster-large.red div {
+  background-color: rgba(137, 5, 0, 0.8);
+  color: white;
+}

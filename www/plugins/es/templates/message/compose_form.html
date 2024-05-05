@@ -1,0 +1,102 @@
+  <form name="messageForm" novalidate="" ng-submit="doSend()">
+
+    <div class="list no-margin"
+         ng-init="setForm(messageForm)">
+
+      <!-- TODO: allow multi dest ?
+           Do IT with a ion-scroll - see https://stackoverflow.com/a/38308803 -->
+      <a class="item item-icon-right gray ink"
+         ng-class="{'item-input-error': form.$submitted && !formData.destPub}"
+         ng-click="showWotLookupModal()">
+          <span class="gray" translate>MESSAGE.COMPOSE.TO</span>
+          <span class="badge badge-royal" ng-if="destUid"><i class="ion-person"></i> {{destName||destUid}}</span>&nbsp;
+          <span class="badge badge-stable" ng-if="!destUid && destPub">{{destName}}
+            <span ng-if="!destName"><i class="ion-key"></i>{{destPub | formatPubkey}}</span>
+          </span>&nbsp;
+          <i class="gray icon ion-ios-arrow-right"></i>
+      </a>
+      <div class="form-errors"
+           ng-if="form.$submitted && !formData.destPub">
+        <div class="form-error">
+          <span translate="ERROR.FIELD_REQUIRED"></span>
+        </div>
+      </div>
+
+      <ion-item class="item-text-wrap ink"
+           ng-class="{'item-icon-right': enableSelectWallet}"
+           ng-click="showSelectWalletModal()">
+          <span class="gray" translate>TRANSFER.FROM</span>
+          <span class="badge badge-balanced animate-fade-in animate-show-hide" ng-show="!loading">
+              <ion-spinner icon="android" ng-if="!walletData.pubkey"></ion-spinner>
+              <span ng-if="walletData.pubkey && !walletData.isMember">
+                <i class="ion-key"></i> {{walletData.pubkey| formatPubkey}}&nbsp;&nbsp;
+              </span>
+              <span ng-if="walletData.isMember">
+                <i class="ion-person"></i> {{walletData.name||walletData.uid}}
+              </span>
+          </span>
+        <i class="gray icon ion-ios-arrow-right" ng-if="enableSelectWallet"></i>
+      </ion-item>
+
+      <!-- Object -->
+      <div class="item item-input"
+             ng-class="{'item-input-error': form.$submitted && form.title.$invalid}">
+        <input type="text"
+               autocomplete="off"
+               placeholder="{{'MESSAGE.COMPOSE.OBJECT_HELP' | translate}}"
+               name="title"
+               ng-model="formData.title"
+               ng-maxlength="256"
+               required>
+        <span class="badge item-note" ng-if="isReply">({{'MESSAGE.COMPOSE.OBJECT' | translate}})</span>
+      </div>
+      <div class="form-errors"
+           ng-show="form.$submitted && form.title.$error"
+           ng-messages="form.title.$error">
+        <div class="form-error" ng-message="maxlength">
+          <span translate="MESSAGE.ERROR.MESSAGE_CONTENT_TOO_LONG" translate-values="{maxLength: 256}"></span>
+        </div>
+        <div class="form-error" ng-message="required">
+          <span translate="ERROR.FIELD_REQUIRED"></span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="item item-input item-floating-label"
+             ng-class="{'item-input-error': form.$submitted && form.content.$invalid}">
+        <span class="input-label">{{'MESSAGE.COMPOSE.MESSAGE' | translate}}</span>
+        <textarea placeholder="{{'MESSAGE.COMPOSE.MESSAGE_HELP' | translate}}"
+                  autocomplete="off"
+                  name="content"
+                  ng-model="formData.content"
+                  rows="8"
+                  ng-maxlength="5000">
+        </textarea>
+      </div>
+      <div class="form-errors"
+           ng-show="form.$submitted && form.content.$error"
+           ng-messages="form.content.$error">
+        <div class="form-error" ng-message="maxlength">
+          <span translate="MESSAGE.ERROR.MESSAGE_CONTENT_TOO_LONG" translate-values="{maxLength: 5000}"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="padding hidden-xs text-right">
+      <button class="button button-clear button-dark ink"
+              ng-click="cancel()" type="button"
+              translate>COMMON.BTN_CANCEL</button>
+      <button class="button button-positive ink" type="submit" ng-disabled="sending"
+              translate>TRANSFER.BTN_SEND</button>
+    </div>
+
+    <!-- Encryption info -->
+    <div class="list no-margin">
+      <div class="item item-icon-left item-text-wrap">
+        <i class="icon ion-ios-information-outline positive"></i>
+        <h4 class="positive" translate>MESSAGE.COMPOSE.ENCRYPTED_HELP</h4>
+      </div>
+    </div>
+  </form>
+

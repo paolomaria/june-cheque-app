@@ -1,0 +1,121 @@
+<a name="demo"></a>
+<div class="row responsive-sm"
+     ng-if="::$root.config.demo"
+     ng-class="itemsClass['demo']">
+  <div class="col col-20" translate>MODE.DEMO.MODE</div>
+  <div class="col">
+    <span translate>MODE.DEMO.MODE_HELP</span><br/>
+    <span translate>MODE.DEMO.INSTALL_HELP</span>
+  </div>
+</div>
+
+<a name="readonly"></a>
+<div class="row responsive-sm"
+     ng-if="::$root.config.readonly"
+     ng-class="itemsClass['readonly']">
+  <div class="col col-20" translate>MODE.READONLY.MODE</div>
+  <div class="col">
+    <span translate>MODE.READONLY.MODE_HELP</span><br/>
+    <span translate>MODE.READONLY.INSTALL_HELP</span>
+  </div>
+</div>
+
+<div class="hidden-readonly">
+  <a name="join"></a>
+  <h2 translate>HELP.JOIN.SECTION</h2>
+
+    <a name="join-salt"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass['join-salt']">
+      <div class="col col-20" translate>LOGIN.SALT</div>
+      <div class="col" translate>HELP.JOIN.SALT</div>
+    </div>
+
+    <a name="join-password"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass['join-password']">
+      <div class="col col-20" translate>LOGIN.PASSWORD</div>
+      <div class="col" translate>HELP.JOIN.PASSWORD</div>
+    </div>
+
+    <a name="join-pseudo"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass['join-pseudo']">
+      <div class="col col-20" translate>ACCOUNT.NEW.PSEUDO</div>
+      <div class="col" translate>HELP.JOIN.PSEUDO</div>
+    </div>
+</div>
+
+<div class="hidden-readonly">
+  <a name="login"></a>
+  <h2 translate>HELP.LOGIN.SECTION</h2>
+
+  <a name="login-pubkey"></a>
+  <div class="row responsive-sm"
+       ng-class="itemsClass['login-pubkey']">
+    <div class="col col-20" translate>HELP.LOGIN.PUBKEY</div>
+    <div class="col" translate>HELP.LOGIN.PUBKEY_DEF</div>
+  </div>
+
+  <a name="login-method"></a>
+  <div class="row responsive-sm"
+       ng-class="itemsClass['login-method']">
+    <div class="col col-20" translate>HELP.LOGIN.METHOD</div>
+    <div class="col" translate>HELP.LOGIN.METHOD_DEF</div>
+  </div>
+</div>
+
+<div>
+  <a name="glossary"></a>
+  <h2 translate>HELP.GLOSSARY.SECTION</h2>
+
+    <a name="pubkey"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass.pubkey">
+      <div class="col col-20" translate>COMMON.PUBKEY</div>
+      <div class="col" translate>HELP.GLOSSARY.PUBKEY_DEF</div>
+    </div>
+
+    <a name="blockchain"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass.blockchain">
+      <div class="col col-20" translate>HELP.GLOSSARY.BLOCKCHAIN</div>
+      <div class="col" translate>HELP.GLOSSARY.BLOCKCHAIN_DEF</div>
+    </div>
+
+    <a name="universal_dividend"></a>
+    <a name="ud"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass.ud">
+      <div class="col col-20" translate>COMMON.UNIVERSAL_DIVIDEND</div>
+      <div class="col" translate>HELP.GLOSSARY.UNIVERSAL_DIVIDEND_DEF</div>
+    </div>
+
+    <a name="member"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass.member">
+      <div class="col col-20" translate>HELP.GLOSSARY.MEMBER</div>
+      <div class="col" translate>HELP.GLOSSARY.MEMBER_DEF</div>
+    </div>
+
+  <a name="wot"></a>
+    <div class="row responsive-sm"
+       ng-class="itemsClass.wot">
+    <div class="col col-20" translate>HELP.GLOSSARY.WOT</div>
+    <div class="col" translate>HELP.GLOSSARY.WOT_DEF</div>
+  </div>
+
+  <a name="currency_rules"></a>
+    <div class="row responsive-sm"
+         ng-class="itemsClass.currency_rules">
+      <div class="col col-20" translate>HELP.GLOSSARY.CURRENCY_RULES</div>
+      <div class="col" translate>HELP.GLOSSARY.CURRENCY_RULES_DEF</div>
+    </div>
+
+  <a name="distance_rule"></a>
+  <div class="row responsive-sm"
+       ng-class="itemsClass.distance_rule">
+    <div class="col col-20" translate>HELP.GLOSSARY.DISTANCE_RULE</div>
+    <div class="col" translate>HELP.GLOSSARY.DISTANCE_RULE_DEF</div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+
+<div class="item row row-header done in hidden-xs hidden-sm" ng-if="showHeaders">
+
+  <a class="no-padding dark col col-header"
+     ng-if=":rebind:expertMode"
+     ng-click="toggleSort('time')">
+    <cs-sort-icon asc="search.asc" sort="search.sort" toggle="'time'"></cs-sort-icon>
+    {{'DOCUMENT.LOOKUP.HEADER_TIME' | translate}}
+  </a>
+  <a class="no-padding dark col col-header"
+     ng-if=":rebind:expertMode"
+     ng-click="toggleSort('issuer')">
+    <cs-sort-icon asc="search.asc" sort="search.sort" toggle="'issuer'"></cs-sort-icon>
+    {{'DOCUMENT.LOOKUP.HEADER_ISSUER' | translate}}
+  </a>
+  <a class="no-padding dark col col-header"
+     ng-if=":rebind:expertMode"
+     ng-click="toggleSort('recipient')">
+    <cs-sort-icon asc="search.asc" sort="search.sort" toggle="'recipient'"></cs-sort-icon>
+    {{'DOCUMENT.LOOKUP.HEADER_RECIPIENT' | translate}}
+  </a>
+  <a class="no-padding dark col col-10 col-header"
+     ng-if=":rebind:expertMode && search.type==='movement'"
+     ng-click="toggleSort('amount')">
+    <cs-sort-icon asc="search.asc" sort="search.sort" toggle="'amount'"></cs-sort-icon>
+    {{'DOCUMENT.LOOKUP.HEADER_AMOUNT' | translate}}
+  </a>
+</div>
+
+<div class="padding gray" ng-if=":rebind:!search.loading && !search.results.length" translate>
+  COMMON.SEARCH_NO_RESULT
+</div>
+
+<!-- for each doc -->
+<ng-repeat ng-repeat="doc in :rebind:search.results track by doc.id"
+           ng-switch on="doc.type">
+  <div ng-switch-when="comment">
+    <ng-include src="::'plugins/es/templates/document/item_document_comment.html'"></ng-include>
+  </div>
+  <div ng-switch-when="profile">
+    <ng-include src="::'plugins/es/templates/document/item_document_profile.html'"></ng-include>
+  </div>
+  <div ng-switch-when="movement">
+    <ng-include src="::'plugins/es/templates/document/item_document_movement.html'"></ng-include>
+  </div>
+  <div ng-switch-when="record">
+    <ng-include src="::doc.index === 'page' ? 'plugins/es/templates/document/item_document_page.html' : 'plugins/es/templates/document/item_document.html'"></ng-include>
+  </div>
+  <div ng-switch-default>
+    <ng-include src="::'plugins/es/templates/document/item_document.html'"></ng-include>
+  </div>
+</ng-repeat>

@@ -1,0 +1,24 @@
+<ion-view>
+  <ion-nav-title>
+    {{'MENU.WOT' | translate}}
+  </ion-nav-title>
+
+  <ion-nav-buttons side="secondary">
+    <button class="button button-icon button-clear icon ion-qr-scanner hidden-no-device"
+            ng-if="$root.device.barcode.enable"
+            ng-click="scanQrCode()">
+    </button>
+    <button class="button button-icon button-clear visible-xs visible-sm"
+            ng-click="showActionsPopover($event)">
+      <i class="icon ion-android-funnel"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="padding no-padding-x no-padding-sm" scroll="true">
+
+    <!-- Allow extension here -->
+    <cs-extension-point name="top"></cs-extension-point>
+
+    <ng-include src="::'templates/wot/lookup_form.html'"></ng-include>
+  </ion-content>
+</ion-view>

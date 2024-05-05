@@ -1,0 +1,135 @@
+<ng-if ng-if=":state:enable && extensionPoint === 'hero'" >
+  <!-- likes -->
+  <small class="light" style="display: inline-block;"
+         ng-include="::'plugins/es/templates/common/view_likes.html'"
+         ng-init="canEdit=true"></small>
+</ng-if>
+
+<ng-if ng-if=":state:enable && extensionPoint === 'after-general'">
+
+  <!-- profile -->
+  <div class="item item-divider item-divider-top-border">
+    <span>
+      {{'PROFILE.PROFILE_DIVIDER' | translate}}
+      <i style="font-size: 12pt; cursor: pointer;"
+         ng-click="showProfileHelp=!showProfileHelp"
+         class="icon positive ion-ios-help-outline"
+         title="{{'PROFILE.PROFILE_DIVIDER_HELP' | translate}}"></i>
+    </span>
+    <a class="badge button button-text button-small button-small-padding"
+       ng-if="isDefaultWallet"
+       ui-sref="app.edit_profile">
+      <i class="icon ion-edit"></i>
+      <span ng-if="!formData.profile" translate>PROFILE.BTN_ADD</span>
+      <span ng-if="formData.profile" translate>PROFILE.BTN_EDIT</span>
+    </a>
+    <a class="badge button button-text button-small button-small-padding "
+       ng-if="!isDefaultWallet"
+       ui-sref="app.edit_profile_by_id({id: walletId})">
+      <i class="icon ion-edit"></i>
+      <span ng-if="!formData.profile" translate>PROFILE.BTN_ADD</span>
+      <span ng-if="formData.profile" translate>PROFILE.BTN_EDIT</span>
+    </a>
+  </div>
+
+
+  <div class="item item-text-wrap positive item-small-height item-wallet-help" ng-show="showProfileHelp">
+    <small trust-as-html="'PROFILE.PROFILE_DIVIDER_HELP'|translate"></small>
+  </div>
+
+  <ng-include src="::'plugins/es/templates/user/items_profile.html'" ng-init="showName=true"></ng-include>
+
+  <!-- subscriptions -->
+  <div class="item item-divider item-divider-top-border">
+    <span>
+      {{'SUBSCRIPTION.SUBSCRIPTION_DIVIDER' | translate}}
+      <i style="font-size: 12pt; cursor: pointer;"
+         ng-click="showSubscriptionHelp=!showSubscriptionHelp"
+         class="icon positive ion-ios-help-outline"
+         title="{{'SUBSCRIPTION.SUBSCRIPTION_DIVIDER_HELP' | translate}}"></i>
+    <span>
+
+    <a class="badge button button-text button-small button-small-padding "
+       ng-if="!formData.subscriptions.count && isDefaultWallet"
+       ui-sref="app.edit_subscriptions">
+      <i class="icon ion-edit"></i>
+      <span translate>SUBSCRIPTION.BTN_ADD</span>
+    </a>
+    <a class="badge button button-text button-small button-small-padding "
+       ng-if="!formData.subscriptions.count && !isDefaultWallet"
+       ui-sref="app.edit_subscriptions_by_id({id: walletId})">
+      <i class="icon ion-edit"></i>
+      <span translate>SUBSCRIPTION.BTN_ADD</span>
+    </a>
+  </div>
+
+  <div class="item item-text-wrap positive item-small-height" ng-show="showSubscriptionHelp">
+    <small translate>SUBSCRIPTION.SUBSCRIPTION_DIVIDER_HELP</small>
+  </div>
+
+  <div ng-if="!formData.subscriptions.count"
+       class="item gray" translate>SUBSCRIPTION.NO_SUBSCRIPTION</div>
+
+  <a class="item item-icon-left item-text-wrap item-icon-right ink"
+     ng-if="formData.subscriptions.count && isDefaultWallet"
+     ui-sref="app.edit_subscriptions">
+    <i class="icon ion-gear-a"></i>
+    <span translate>SUBSCRIPTION.SUBSCRIPTION_COUNT</span>
+    <span class="badge badge-calm">{{formData.subscriptions.count}}</span>
+
+    <i class="gray icon ion-ios-arrow-right"></i>
+  </a>
+  <a class="item item-icon-left item-text-wrap item-icon-right ink"
+     ng-if="formData.subscriptions.count && !isDefaultWallet"
+     ui-sref="app.edit_subscriptions_by_id({id: walletId})">
+    <i class="icon ion-gear-a"></i>
+    <span translate>SUBSCRIPTION.SUBSCRIPTION_COUNT</span>
+    <span class="badge badge-calm">{{formData.subscriptions.count}}</span>
+
+    <i class="gray icon ion-ios-arrow-right"></i>
+  </a>
+
+  <!-- page -->
+  <div class="item item-divider item-divider-top-border">
+    <span>
+      {{'REGISTRY.WALLET.PAGE_DIVIDER' | translate}}
+      <i style="font-size: 12pt; cursor: pointer;"
+         ng-click="showPagesHelp=!showPagesHelp"
+         class="icon positive ion-ios-help-outline"
+         title="{{'REGISTRY.WALLET.PAGE_DIVIDER_HELP' | translate}}"></i>
+    <span>
+
+    <a class="badge button button-text button-small button-small-padding "
+       ng-if="!formData.pages.count"
+       ng-click="showNewPageModal($event)">
+      <i class="icon ion-edit"></i>
+      <span translate>REGISTRY.BTN_NEW</span>
+    </a>
+  </div>
+
+  <div class="item item-text-wrap positive item-small-height item-wallet-help" ng-show="showPagesHelp">
+    <small trust-as-html="'REGISTRY.WALLET.PAGE_DIVIDER_HELP'|translate"></small>
+  </div>
+
+  <div ng-if="!formData.pages.count"
+       class="item gray" translate>REGISTRY.NO_PAGE</div>
+
+  <a class="item item-icon-left item-text-wrap item-icon-right ink"
+     ng-if="formData.pages.count && isDefaultWallet"
+     ui-sref="app.wallet_pages">
+    <i class="icon ion-social-buffer"></i>
+    <span translate>REGISTRY.MY_PAGES</span>
+    <span class="badge badge-calm">{{formData.pages.count}}</span>
+
+    <i class="gray icon ion-ios-arrow-right"></i>
+  </a>
+  <a class="item item-icon-left item-text-wrap item-icon-right ink"
+     ng-if="formData.pages.count && !isDefaultWallet"
+     ui-sref="app.wallet_pages_by_id({id: walletId})">
+    <i class="icon ion-social-buffer"></i>
+    <span translate>REGISTRY.MY_PAGES</span>
+    <span class="badge badge-calm">{{formData.pages.count}}</span>
+
+    <i class="gray icon ion-ios-arrow-right"></i>
+  </a>
+</ng-if>

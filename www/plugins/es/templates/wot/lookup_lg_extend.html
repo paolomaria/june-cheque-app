@@ -1,0 +1,33 @@
+<div class="buttons-tabs" ng-if=":state:enable">
+  <div class="pull-right">
+    <div
+      class="button button-tab dark"
+      title="{{'REGISTRY.BTN_SHOW_WOT_HELP' | translate}}"
+      nav-transition="none"
+      active-link="active"
+      active-link-path-prefix="#/app/wot/lg"
+      ui-sref="app.wot_lookup_lg">
+      <i class="icon ion-person-stalker"></i>
+      {{'REGISTRY.BTN_SHOW_WOT' | translate}}
+    </div>
+    <a
+      class="button button-tab ink dark"
+      title="{{'REGISTRY.BTN_SHOW_PAGES_HELP' | translate}}"
+      nav-transition="none"
+      active-link="active"
+      active-link-path-prefix="#/app/wot/page"
+      ui-sref="app.registry_lookup_lg">
+      <i class="icon ion-social-buffer"></i>
+      {{'REGISTRY.BTN_SHOW_PAGES' | translate}}
+    </a>
+  </div>
+
+  <div class="pull-right" ng-if="showNewPageButton">
+    <button class="button button-small button-positive button-small-padding button-clear ink hidden-sm hidden-xs"
+            ng-click="showNewPageModal()">
+      <i class="icon ion-plus"></i>
+      {{'REGISTRY.BTN_NEW' | translate}}
+    </button>
+    &nbsp;
+  </div>
+</div>

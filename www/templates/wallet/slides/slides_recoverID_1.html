@@ -1,0 +1,40 @@
+<ion-content class="has-header padding" >
+  <p translate>ACCOUNT.SECURITY.RECOVER_ID_SELECT_FILE</p>
+
+  <div drop-zone="onFileChanged(file)">
+    <div ng-if="!hasContent" file-select="onFileChanged(file)" accept=".txt">
+      <h2 class="gray" translate>COMMON.CHOOSE_FILE</h2>
+    </div>
+
+    <div ng-if="hasContent" class="item item-icon-left item-icon-right">
+     <i class="icon ion-document-text dark"></i>
+      <div class="item-content row">
+         <div class="col ">
+           <span>{{fileData.name}}</span>
+           <br />
+           <small>{{fileData.size}} Ko</small>
+         </div>
+         <div class="col-10">
+           <b ng-class="{'ion-close-circled assertive': !isValidFile}"
+              style="font-size: 28px; position: relative; top: 6px;"></b>
+         </div>
+      </div>
+      <!-- remove file button -->
+      <a class="ion-close-round gray pull-right" style="font-size: 10px; position: absolute; top: 6px; right: 6px;"
+         ng-click="restore()"></a>
+   </div>
+  </div>
+
+  <div class="padding hidden-xs text-right">
+   <button class="button button-clear button-dark ink" ng-click="closeModal()"
+           type="button" translate>COMMON.BTN_CANCEL
+   </button>
+   <button class="button button-calm icon-right ion-chevron-right ink"
+           ng-click="doNext()" translate>
+     COMMON.BTN_NEXT
+     <i class="icon ion-arrow-right-a"></i>
+   </button>
+  </div>
+</ion-content>
+
+

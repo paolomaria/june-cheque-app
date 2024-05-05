@@ -1,0 +1,19 @@
+<ion-view left-buttons="leftButtons">
+  <ion-nav-title>
+    {{'REGISTRY.SEARCH.TITLE' | translate}}
+  </ion-nav-title>
+
+  <ion-content class="lookupForm padding no-padding-xs no-padding-sm">
+
+    <ng-include src="::'plugins/es/templates/wot/lookup_lg_extend.html'" ng-init="enable= true; showNewPageButton=true;"></ng-include>
+
+    <ng-include src="::'plugins/es/templates/registry/lookup_form.html'"></ng-include>
+
+    <ng-include src="::'plugins/es/templates/registry/lookup_list_lg.html'"></ng-include>
+  </ion-content>
+
+  <button id="fab-add-registry-record"
+          class="button button-fab button-fab-bottom-right button-assertive icon ion-plus hidden-md hidden-lg spin"
+          ng-click="showNewPageModal()">
+  </button>
+</ion-view>

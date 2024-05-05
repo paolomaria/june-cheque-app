@@ -1,0 +1,28 @@
+<div class="item">
+  <p class="item-text-wrap" translate>LOGIN.PUBKEY_FORM_HELP</p>
+</div>
+
+<!-- pubkey  -->
+<div class="item item-input item-button-right"
+       ng-class="{ 'item-input-error': form.$submitted && form.pubkey.$invalid}">
+  <span class="input-label hidden-xs" translate>COMMON.PUBKEY</span>
+  <input name="pubkey" type="text" placeholder="{{'LOGIN.PUBKEY_HELP' | translate}}"
+         autocomplete="off"
+         ng-model="formData.pubkey"
+         ng-model-options="{ debounce: 650 }"
+         required >
+  <a class="button button-stable icon ion-android-search ink"
+          ng-click="showWotLookupModal(form.pubkey.$viewValue)">
+  </a>
+</div>
+<div class="form-errors"
+     ng-show="form.$submitted && form.pubkey.$error"
+     ng-messages="form.pubkey.$error">
+  <div class="form-error" ng-message="required">
+    <span translate="ERROR.FIELD_REQUIRED"></span>
+  </div>
+  <div class="form-error" ng-message="checksum">
+    <span translate="ERROR.INVALID_PUBKEY_CHECKSUM"></span>
+  </div>
+</div>
+

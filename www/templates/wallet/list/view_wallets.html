@@ -1,0 +1,87 @@
+<ion-view left-buttons="leftButtons"
+          class="view-wallet-list">
+  <ion-nav-title>
+    <!-- no title-->
+  </ion-nav-title>
+
+  <ion-nav-buttons side="secondary">
+    <cs-extension-point name="nav-buttons"></cs-extension-point>
+
+    <button class="button button-icon button-clear icon ion-android-more-vertical visible-xs visible-sm"
+            ng-click="showActionsPopover($event)">
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content scroll="true"
+               class="padding no-padding-xs no-padding-sm"
+               bind-notifier="{ rebind:formData.useRelative, locale:settings.locale.id}">
+
+    <ion-refresher pulling-text="{{:locale:'COMMON.BTN_REFRESH' | translate}}"
+                   on-refresh="doUpdate(true, $event)">
+    </ion-refresher>
+
+    <!-- Buttons bar-->
+    <div class="hidden-xs hidden-sm padding text-center">
+
+      <button class="button button-stable button-small-padding icon ion-loop ink"
+              ng-click="doUpdate(true, $event)"
+              title="{{:locale:'COMMON.BTN_REFRESH' | translate}}">
+      </button>
+
+      <cs-extension-point name="buttons"></cs-extension-point>
+
+      <button class="button button-calm icon-left ink"
+              ng-click="showNewWalletModal()">
+        {{:locale:'ACCOUNT.WALLET_LIST.BTN_NEW' | translate}}
+      </button>
+
+      <button class="button button-stable button-small-padding icon ion-android-more-vertical ink"
+              ng-click="showActionsPopover($event)"
+              title="{{:locale:'COMMON.BTN_OPTIONS' | translate}}">
+      </button>
+
+    </div>
+
+    <div class="padding-top padding-xs hidden-xs hidden-sm" style="display: block; height: 60px;">
+      <div class="pull-left">
+        <h4>
+          <span translate>ACCOUNT.WALLET_LIST.TITLE</span>
+          <small class="gray" ng-if="formData.balance">(<span translate>ACCOUNT.WALLET_LIST.TOTAL_DOTS</span>&nbsp;
+            <span ng-bind-html="formData.balance|formatAmount:{useRelative: formData.useRelative, currency: currency}"></span>)
+          </small>
+          <ion-spinner class="ion-spinner-small" icon="android" ng-if="loading || formData.updatingWalletId"></ion-spinner>
+
+        </h4>
+      </div>
+    </div>
+
+
+
+    <div class="center padding gray" ng-if="!loading && wallets && !wallets.length && !defaultWallet">
+      {{:locale:'ACCOUNT.WALLET_LIST.NO_WALLET'|translate}}
+    </div>
+
+    <ion-list class="{{::motion.ionListClass}}">
+
+      <!-- default wallet -->
+      <ng-include ng-if="defaultWallet" ng-init="wallet = defaultWallet" src="'templates/wallet/list/item_wallet.html'">
+      </ng-include>
+
+      <!-- children wallets -->
+      <ng-include ng-repeat="wallet in wallets track by wallet.id"
+                 src="'templates/wallet/list/item_wallet.html'">
+      </ng-include>
+    </ion-list>
+
+    <div class="center padding visible-xs visible-sm" ng-if="loading">
+      <ion-spinner icon="android"></ion-spinner>
+    </div>
+  </ion-content>
+
+  <button id="fab-add-wallet"
+          class="button button-fab button-fab-bottom-right button-assertive hidden-md hidden-lg drop ng-hide"
+          ng-show="!loading"
+          ng-click="showNewWalletModal()">
+    <i class="icon ion-plus"></i>
+  </button>
+</ion-view>

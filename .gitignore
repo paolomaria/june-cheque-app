@@ -1,0 +1,50 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+/node_modules/
+/platforms/ios
+#/platforms/android
+/resources/android/build/local.properties
+/resources/android/build/*.keystore
+/resources/android/build/release-signing.properties
+/plugins/
+.idea/
+.vscode/
+.local/
+.directory
+/*.iml
+/npm-debug.log
+/package-lock.json
+/yarn-error.log
+
+/dist/web
+/dist/android
+/dist/*.sha256
+
+/hooks/uglify-config.json
+/hooks/after_prepare/uglify.js
+
+/scripts/sdkmanager.log
+
+/www/js/config.js
+/www/dist
+/www/lib
+
+# Generated CSS
+/www/css/ionic.app.css
+/www/css/ionic.app.min.css
+
+# Generated License files
+/www/license/*.html
+/www/license/*.txt
+
+# Leaflet generated files
+/www/css/leaflet.app.css
+/www/css/leaflet.app.min.css
+/www/img/layers*.png
+/www/img/marker*.png
+/www/img/loader.gif
+/www/img/search-icon.png
+/www/img/search-icon-mobile.png
+
+.run/*

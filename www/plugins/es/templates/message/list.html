@@ -1,0 +1,53 @@
+<div class="padding gray" ng-if="!search.loading && !search.results.length">
+  <span ng-if="search.type=='last'">{{ ('MESSAGE.NO_MESSAGE_' + type) | upper | translate }}</span>
+  <span ng-if="search.type=='text'" translate>COMMON.SEARCH_NO_RESULT</span>
+</div>
+
+<ion-list ng-class="::motion.ionListClass"
+          can-swipe="$root.device.enable">
+
+  <ion-item
+    class="item item-border-large item-avatar item-icon-right ink"
+    ng-repeat="msg in :rebind:search.results track by msg.id"
+    ng-click="select(msg, $event)">
+
+    <i ng-if="::!msg.avatar" class="item-image icon" ng-class="{'ion-person': msg.uid, 'ion-email': !msg.uid}"></i>
+    <i ng-if="::msg.avatar" class="item-image avatar" style="background-image: url({{::msg.avatar.src}})"></i>
+
+    <h4 class="pull-right hidden-xs hidden-sm">
+      <span class="dark"><i class="ion-clock"></i> {{::msg.time|formatFromNow}}</span>
+      <span class="gray ">| {{::msg.time|formatDate}}</span>
+    </h4>
+    <h4 class="pull-right visible-xs visible-sm dark"><i class="ion-clock"></i> {{::msg.time|formatFromNow}}</h4>
+    <h3>
+      <a class="positive"
+         ng-if="::msg.name||msg.uid"
+         ui-sref="app.wot_identity({pubkey:msg.issuer, uid:msg.name||msg.uid})">
+        <i class="ion-person"></i>
+        {{::msg.name||msg.uid}}
+      </a>
+      <a class="gray" ng-if="::!msg.name && !msg.uid"
+         ui-sref="app.wot_identity({pubkey:msg.issuer})">
+        <i class="ion-key"></i>
+        {{::msg.issuer|formatPubkey}}
+      </a>
+    </h3>
+    <h2 ng-class="{'unread': !msg.read}" ng-bind-html="::msg.title"></h2>
+    <p ng-bind-html="::msg.summary||msg.content"></p>
+    <i class="icon ion-ios-arrow-right "></i>
+    <ion-option-button class="button-stable"
+                       ng-click="showReplyModal($index)"
+                       translate>MESSAGE.BTN_REPLY</ion-option-button>
+    <ion-option-button class="button-assertive"
+                       ng-click="delete($index)"
+                       translate>COMMON.BTN_DELETE</ion-option-button>
+
+  </ion-item>
+</ion-list>
+
+<ion-infinite-scroll
+  ng-if="!search.loading && search.hasMore"
+  icon="ion-loading-c"
+  on-infinite="showMore()"
+  distance="10%">
+</ion-infinite-scroll>

@@ -1,0 +1,122 @@
+{
+  "NETWORK": {
+    "VIEW": {
+      "BTN_GRAPH": "Statistics"
+    }
+  },
+  "GRAPH": {
+    "COMMON": {
+      "LINEAR_SCALE" : "Linear scale",
+      "LOGARITHMIC_SCALE" : "Logarithmic scale",
+      "BTN_SHOW_STATS": "See statistics",
+      "BTN_SHOW_DETAILED_STATS": "Detailed statistics",
+      "RANGE_DURATION_DIVIDER": "Step unit:",
+      "RANGE_DURATION": {
+        "HOUR": "Group by <b>hour</b>",
+        "DAY": "Group by <b>day</b>",
+        "MONTH": "Group by <b>month</b>"
+      },
+      "MAX_AGE": {
+        "DAY": "For 24h",
+        "WEEK": "For a week",
+        "MONTH": "For a month",
+        "QUARTER": "For 3 months",
+        "SEMESTER": "For 6 months",
+        "YEAR": "For a year",
+        "FOREVER": "Forever"
+      }
+    },
+    "ACCOUNT": {
+      "TITLE": "Statistics",
+      "BTN_SHOW_STATS": "View account Statistics",
+      "BALANCE_DIVIDER": "Account status",
+      "BALANCE_TITLE": "Evolution of the account {{pubkey|formatPubkey}}",
+      "TX_RECEIVED_LABEL": "Receipts",
+      "TX_SENT_LABEL": "Spending",
+      "UD_LABEL": "UD",
+      "BALANCE_LABEL": "Balance",
+      "INPUT_CHART_TITLE": "Sum of incoming flows, per transmitter:",
+      "OUTPUT_CHART_TITLE": "Sum of outgoing flows, per recipient:"
+    },
+    "BLOCKCHAIN": {
+      "TITLE": "Statistics",
+      "BLOCKS_ISSUERS_DIVIDER": "Written blocks by members",
+      "BLOCKS_ISSUERS_HELP": "<b>{{issuerCount|formatInteger}} members</b> calculated <b>{{blockCount|formatInteger}} blocks</b>",
+      "BLOCKS_ISSUERS_TITLE": "Number of blocks calculated per member",
+      "BLOCKS_ISSUERS_LABEL": "Number of blocks",
+      "TX_DIVIDER": "Analysis of transactions",
+      "TX_AMOUNT_TITLE": "Transaction volume",
+      "TX_AMOUNT_PUBKEY_TITLE": "Volume of transactions calculated by {{issuer | formatPubkey}}",
+      "TX_AMOUNT_LABEL": "Exchange volume",
+      "TX_COUNT_TITLE": "Number of written transactions",
+      "TX_COUNT_LABEL": "Number of transactions",
+      "TX_AVG_BY_BLOCK": "Average per block"
+    },
+    "CURRENCY": {
+      "MONETARY_MASS_TITLE": "Evolution of the monetary mass",
+      "MONETARY_MASS_LABEL": "Monetary mass",
+      "MONETARY_MASS_SHARE_LABEL": "Average per member",
+      "UD_TITLE": "Evolution of the universal dividend",
+      "MEMBERS_COUNT_TITLE": "Evolution of the number of members",
+      "MEMBERS_COUNT_LABEL": "Number of members",
+      "MEMBERS_DELTA_TITLE": "variation in the number of members",
+      "IS_MEMBER_DELTA_LABEL": "Validated memberships",
+      "WAS_MEMBER_DELTA_LABEL": "Membership losses",
+      "PENDING_DELTA_LABEL": "Membership requests"
+    },
+    "PEER": {
+      "VIEW": {
+        "BLOCK_COUNT_LABEL": "Computed blocks count",
+        "BLOCK_COUNT": "{{count}} blocks",
+        "NO_BLOCK": "No block"
+      }
+    },
+    "DOC_STATS": {
+      "TITLE": "Data storage statistics (Cesium+)",
+      "USER": {
+        "TITLE": "Number of documents linked to an account",
+        "USER_PROFILE": "User profiles",
+        "USER_SETTINGS": "Saved settings"
+      },
+      "USER_DELTA": {
+        "TITLE": "Delta / Number of documents linked to an account",
+        "USER_PROFILE": "User profiles",
+        "USER_SETTINGS": "Saved settings"
+      },
+      "MESSAGE": {
+        "TITLE": "Number of documents related to the communication",
+        "MESSAGE_INBOX": "Messages in inbox",
+        "MESSAGE_OUTBOX": "Messages in outbox",
+        "INVITATION_CERTIFICATION": "Invitations to certify"
+      },
+      "SOCIAL": {
+        "TITLE": "Number of page or group",
+        "PAGE_COMMENT": "Comments",
+        "PAGE_RECORD": "Pages",
+        "GROUP_RECORD": "Groups"
+      },
+      "OTHER": {
+        "TITLE": "Other documents",
+        "HISTORY_DELETE": "Deletion of documents"
+      }
+    },
+    "SYNCHRO": {
+      "TITLE": "Synchronization statistics",
+      "COUNT": {
+        "TITLE": "Synchronized volume",
+        "INSERTS": "Insertions",
+        "UPDATES": "Updates",
+        "DELETES": "Deletions"
+      },
+      "PEER": {
+        "TITLE": "Requested peers",
+        "ES_USER_API": "Peers with with user data",
+        "ES_SUBSCRIPTION_API": "Peers with subscription"
+      },
+      "PERFORMANCE": {
+        "TITLE": "Execution performance",
+        "DURATION": "Execution time (ms)"
+      }
+    }
+  }
+}

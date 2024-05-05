@@ -1,0 +1,33 @@
+
+<div class="item item-avatar item-icon-right item-border item-wallet"
+     ng-click="select($event, wallet)"
+     ng-init="walletData=wallet.data;">
+
+  <i ng-if="::!walletData.avatar" class="item-image icon"
+     ng-class="::{'ion-card': !walletData.isMember, 'ion-person': walletData.isMember}"></i>
+  <i ng-if="::walletData.avatar" class="item-image avatar" style="background-image: url({{::walletData.avatar.src}})"></i>
+  <div class="badge badge-button badge-avatar badge-assertive ion-locked " ng-hide="::wallet.isAuth()">
+  </div>
+
+  <h2>
+    <ng-if ng-if="::walletData.localName||walletData.name||walletData.uid">{{::walletData.localName||walletData.name||walletData.uid}}</ng-if>
+    <ng-if ng-if="::!walletData.localName && !walletData.name && !walletData.uid">{{::walletData.pubkey|formatPubkey}}</ng-if>
+  </h2>
+
+  <h4 class="gray">
+    <span class="positive" ng-if="::walletData.name && walletData.uid">
+      <i class="ion-person"></i>
+      {{::walletData.uid}}&nbsp;
+    </span>
+    <b class="ion-key"></b>
+    {{::walletData.pubkey | formatPubkey}}
+    <span ng-if="::!walletData.uid" class="assertive" translate>WOT.NOT_MEMBER_PARENTHESIS</span>
+  </h4>
+
+  <div class="badge" ng-if="formData.showBalance"
+        ng-class="{'badge-calm': (walletData.balance > 0) }">
+    <span ng-bind-html="walletData.balance|formatAmount:{useRelative: formData.useRelative, currency: currency}"></span>
+  </div>
+
+  <i class="icon ion-ios-arrow-right "></i>
+</div>

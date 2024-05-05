@@ -1,0 +1,59 @@
+<div class="item">
+  <p class="item-text-wrap" translate>LOGIN.FILE_FORM_HELP</p>
+</div>
+
+<div class="item item-icon-left item-text-wrap">
+  <i class="icon ion-ios-information-outline positive"></i>
+  <span class="positive" translate>LOGIN.FILE.HELP</span>
+</div>
+
+<div drop-zone="onFileChanged(file)">
+  <div ng-if="!formData.file" file-select="onFileChanged(file)" accept=".dunikey,.yml">
+    <h2 class="gray" translate>COMMON.CHOOSE_FILE</h2>
+  </div>
+
+  <div class="item item-icon-left item-icon-right stable-bg"
+       ng-if="formData.file" >
+    <i class="icon ion-document-text dark"></i>
+    <div class="item-content row">
+      <div class="col">
+        <h2>
+          {{formData.file.name}}
+        </h2>
+        <h4 class="dark" ng-if="formData.file.lastModified">
+          <span class="gray" translate>COMMON.FILE.DATE</span> {{formData.file.lastModified/1000|formatDate}}
+        </h4>
+        <h5 class="dark">
+          <span class="gray" translate>COMMON.FILE.SIZE</span> {{formData.file.size|formatInteger}} Ko
+        </h5>
+      </div>
+
+      <div class="col">
+        <h3>
+          <span class="gray" translate>COMMON.PUBKEY</span>
+        </h3>
+        <h3 ng-if="validatingFile" translate>COMMON.FILE.VALIDATING</h3>
+        <h3 ng-if="!validatingFile">
+          <span class="dark animate-show-hide ng-hide" ng-show="formData.file.pubkey">{{formData.file.pubkey}}</span>
+          <span class="assertive animate-show-hide ng-hide" ng-show="!formData.file.valid"><br/>
+            <i class="ion-close-circled assertive"></i>
+            {{formData.file.pubkey ? 'ERROR.AUTH_INVALID_PUBKEY' : 'ERROR.AUTH_INVALID_FILE' |translate}}
+          </span>
+        </h3>
+      </div>
+    </div>
+
+    <!-- remove file button -->
+    <a class="ion-close-round gray pull-right" style="font-size: 10px; position: absolute; top: 6px; right: 6px;"
+            ng-click="removeKeyFile()"></a>
+  </div>
+</div>
+
+
+<!-- keep auth after login (checkbox)  -->
+<ion-checkbox ng-model="formData.keepAuth"
+              class="item ink item-text-wrap">
+  <div class="item-content dark" translate>LOGIN.MEMORIZE_AUTH_FILE</div>
+</ion-checkbox>
+
+

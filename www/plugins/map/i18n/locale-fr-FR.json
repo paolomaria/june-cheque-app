@@ -1,0 +1,76 @@
+{
+  "MAP": {
+    "COMMON": {
+      "SEARCH_DOTS": "Rechercher...",
+      "BTN_LOCALIZE_ME": "Me localiser"
+    },
+    "NETWORK": {
+      "LOOKUP": {
+        "BTN_MAP": "Carte",
+        "BTN_MAP_HELP": "Ouvrir la carte des noeuds"
+      },
+      "VIEW": {
+        "TITLE": "Carte des noeuds",
+        "LAYER": {
+          "MEMBER": "Nœuds membre",
+          "MIRROR": "Nœuds miroir",
+          "OFFLINE": "Nœuds hors ligne"
+        }
+      }
+    },
+    "WOT": {
+      "LOOKUP": {
+        "BTN_MAP": "Carte",
+        "BTN_MAP_HELP": "Ouvrir la carte des membres"
+      },
+      "VIEW": {
+        "TITLE": "Carte des membres",
+        "LAYER": {
+          "MEMBER": "<i class=\"icon ion-person positive\"></i> Membres",
+          "PENDING": "<i class=\"icon ion-clock energized\"></i> Inscriptions en attente",
+          "WALLET": "<i class=\"icon ion-card gray\"></i> Simples portefeuilles"
+        }
+      },
+      "ERROR": {
+        "LOAD_POSITION_FAILED": "Impossible de récupérer les positions à afficher."
+      }
+    },
+    "REGISTRY": {
+      "LOOKUP": {
+        "BTN_MAP": "Carte",
+        "BTN_MAP_HELP": "Ouvrir la carte des pages"
+      },
+      "VIEW": {
+        "TITLE": "Carte des pages",
+        "LAYER": {
+          "SHOP": "<i class=\"icon ion-page-shop positive\"></i> Commerces locaux",
+          "COMPANY": "<i class=\"icon ion-page-company positive\"></i> Entreprises",
+          "ASSOCIATION": "<i class=\"icon ion-page-association energized\"></i> Associations",
+          "INSTITUTION": "<i class=\"icon ion-page-institution gray\"></i> Institutions"
+        }
+      }
+    },
+    "PROFILE": {
+      "MARKER_HELP": "<b>Glissez-déposez</b> ce marqueur pour <b>mettre<br/>à jour votre position</b> sur la carte, ou utilisez le bouton<br/>de recherche au-dessus de la carte."
+    },
+    "ERROR": {
+      "LOCALIZE_ME_FAILED": "Impossible de récupérer votre position actuelle"
+    },
+    "SETTINGS": {
+      "MAP_DIVIDER": "Cartes",
+      "ENABLE_GOOGLE_API": "Activer les services Google API ?",
+      "ENABLE_GOOGLE_API_HELP": "Permet l'affichage dans la <b>carte des membres</b> des comptes ayant une adresse mais aucun positionnement GPS.",
+      "GOOGLE_API_KEY": "Clé d'API Google",
+      "BTN_GOOGLE_API": "Obtenir une clé",
+      "BTN_GOOGLE_API_WARNING": "Nécessite d'avoir un compte Google",
+      "GOOGLE_API_KEY_PLACEHOLDER": "Exemple : AIzaqyAgszvWm0tM81x1sMK_ipDHBI7EowLqR7I"
+    },
+    "HELP": {
+      "TIP": {
+        "WOT": "Cette carte affiche <b>les profils ayant une position</b>, qu'ils correspondent à des comptes membre ou non.<br/><br/>Seuls sont visibles les profils dont l'option &quot;apparaître sur la carte&quot; a été activée.",
+        "WOT_BTN_LAYERS": "<b>Filtrez ici les données affichées</b> : membres, inscriptions en attente, simples portefeuilles, etc.",
+        "WOT_BTN_SEARCH": "Vous pouvez <b>effectuer une recherche</b> par nom, clef publique ou pseudonyme de membre."
+      }
+    }
+  }
+}

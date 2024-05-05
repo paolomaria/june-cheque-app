@@ -1,0 +1,9 @@
+<a href="#">
+  {{peer.dns || peer.server}}
+  <span class="{{peer.uid ? 'positive' : 'gray'}}">
+    <i class="icon {{peer.uid ? 'ion-person' : 'ion-key'}}"></i>
+    {{peer.uid ? (peer.name||peer.uid) : (peer.pubkey|formatPubkey) }}
+  </span>
+  <span class="gray">{{peer.ipv4 ? (peer.ipv4 + ':' + peer.port) : ''}}</span>
+  <span class="{{peer.bma.useSsl  ? '' : 'ng-hide'}}"><i class="ion-locked"></i> <small>SSL</small></span>
+</a>

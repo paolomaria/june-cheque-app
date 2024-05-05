@@ -1,0 +1,293 @@
+
+
+  <!-- transfer -->
+  <h2 class="padding" translate>API.DOC.TRANSFER.TITLE</h2>
+
+
+  <div class="list padding no-padding-xs no-padding-top">
+
+    <div class="item item-divider no-border">
+      <p translate>API.DOC.DESCRIPTION_DIVIDER</p>
+    </div>
+
+    <div class="item item-text-wrap">
+      <p translate>API.DOC.TRANSFER.DESCRIPTION</p>
+    </div>
+
+    <div class="item item-divider no-border">
+      <p translate>API.DOC.URL_DIVIDER</p>
+    </div>
+
+    <div class="item item-text-wrap">
+      <p class="gray text-right">
+        {{$root.rootPath}}#/v1/payment/:pubkey?amount=<span class="text-italic" translate>API.DOC.TRANSFER.PARAM_AMOUNT</span>
+      </p>
+    </div>
+
+    <div class="item item-divider no-border">
+      <p translate>API.DOC.PARAMETERS_DIVIDER</p>
+    </div>
+
+    <div class="item item-text-wrap">
+      <p translate>API.DOC.AVAILABLE_PARAMETERS</p>
+      <div class="row">
+        <div class="col col-20 text-italic">pubkey</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_PUBKEY_HELP</div>
+      </div>
+      <div class="row stable-bg">
+        <div class="col col-20 text-italic dark">amount</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_AMOUNT_HELP</div>
+      </div>
+      <div class="row">
+        <div class="col col-20 text-italic">comment</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_COMMENT_HELP</div>
+      </div>
+      <div class="row stable-bg">
+        <div class="col col-20 text-italic dark">name</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_NAME_HELP</div>
+      </div>
+      <div class="row">
+        <div class="col col-20 text-italic">preferred_node</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_PREFERRED_NODE_HELP</div>
+      </div>
+      <div class="row stable-bg">
+        <div class="col col-20 text-italic dark">redirect_url</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_REDIRECT_URL_HELP</div>
+      </div>
+      <div class="row">
+        <div class="col col-20 text-italic">cancel_url</div>
+        <div class="col gray" translate>API.DOC.TRANSFER.PARAM_CANCEL_URL_HELP</div>
+      </div>
+    </div>
+
+    <!-- demo -->
+    <div class="item item-divider no-border">
+      <p translate>API.DOC.DEMO_DIVIDER</p>
+    </div>
+    <div class="item item-button-right item-text-wrap padding-bottom">
+      <p class="item-icon-right-padding" translate>API.DOC.DEMO_HELP</p>
+      <span class="badge" ng-if="loading">
+        <ion-spinner class="icon" icon="android"></ion-spinner>
+      </span>
+      <a ng-if="!loading"
+         href="{{transferDemoUrl}}" class="button button-raised button-positive icon ion-play"></a>
+    </div>
+    <div class="item item-text-wrap" ng-if="result.type === 'payment' && !result.cancelled">
+      <h2 class="text-right balanced" translate>API.DOC.DEMO_SUCCEED</h2>
+      <h4 class="gray" translate>API.DOC.DEMO_RESULT</h4>
+      <p class="balanced-100-bg padding dark text-keep-lines">{{result.content}}</p>
+
+      <h4 class="gray"><span translate>API.DOC.DEMO_RESULT_PEER</span> <b>{{result.node}}</b></h4>
+    </div>
+    <div class="item item-text-wrap" ng-if="result.type === 'payment' && result.cancelled">
+      <h2 class="text-right assertive" translate>API.DOC.DEMO_CANCELLED</h2>
+    </div>
+
+    <div class="item item-divider no-border">
+      <p translate>API.DOC.INTEGRATE_DIVIDER</p>
+    </div>
+
+    <div class="item item-text-wrap">
+      <p translate>API.DOC.TRANSFER.EXAMPLES_HELP</p>
+
+      <div class="row responsive-sm">
+        <div class="col col-20 text-italic">
+          <span translate>API.DOC.TRANSFER.EXAMPLE_BUTTON</span>
+        </div>
+
+        <!-- no text on button -->
+        <div class="col gray no-border">
+
+          <!-- code -->
+          <p>
+            <i class="icon ion-code"></i>
+            <span translate>API.DOC.INTEGRATE_CODE</span>
+          </p>
+          <div class="item item-input ">
+            <textarea class="gray" select-on-click rows="5"
+                      ng-model="transferButton.html"
+                      ng-model-options="{ debounce: 650 }"></textarea>
+          </div>
+
+          <!-- preview -->
+          <p class="padding-top">
+            <i class="icon ion-eye"></i>
+            <span translate>API.DOC.INTEGRATE_RESULT</span>
+          </p>
+          <div class="padding-left" bind-notifier="{ notifierKey:watchedExpression }">
+            <ng-bind-html  ng-bind-html="transferButton.html|trustAsHtml"></ng-bind-html>
+          </div>
+        </div>
+      </div>
+      <div class="row responsive-sm">
+
+        <div class="col col-20 hidden-xs hidden-sm">&nbsp;</div>
+
+        <!-- HTML button parameters -->
+        <div class="col gray no-border">
+          <p class="padding-top">
+            <a class="positive" ng-click="transferButton.showParameters=!transferButton.showParameters">
+              <i class="icon ion-wrench"></i>
+              <span translate>API.DOC.INTEGRATE_PARAMETERS</span>
+              <i class="icon" ng-class="{'ion-arrow-down-b': !transferButton.showParameters, 'ion-arrow-up-b': transferButton.showParameters}"></i>
+            </a>
+          </p>
+
+          <div ng-if="transferButton.showParameters" class="padding-left">
+
+            <form id="transferForm" class="stable-bg padding">
+              <p class="padding-top">
+                <i class="icon ion-key"></i>
+                {{'API.DOC.TRANSFER.PARAM_PUBKEY' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       autocomplete="off"
+                       ng-model="transferData.pubkey"
+                       ng-model-options="{ debounce: 650 }"
+                       placeholder="{{'API.DOC.TRANSFER.PARAM_PUBKEY_HELP'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-pricetag"></i>
+                {{'API.DOC.TRANSFER.PARAM_AMOUNT' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       autocomplete="off"
+                       ng-model="transferData.amount"
+                       ng-model-options="{ debounce: 650 }"
+                       placeholder="{{'API.DOC.TRANSFER.PARAM_AMOUNT_HELP'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-flag"></i>
+                {{'API.DOC.TRANSFER.PARAM_COMMENT' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       autocomplete="off"
+                       ng-model="transferData.comment" placeholder="{{'API.DOC.TRANSFER.PARAM_COMMENT'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-ios-world-outline"></i>
+                {{'API.DOC.TRANSFER.PARAM_NAME' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       ng-model="transferData.name"
+                       ng-model-options="{ debounce: 650 }"
+                       placeholder="{{'API.DOC.TRANSFER.PARAM_NAME'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-key"></i>
+                {{'API.DOC.TRANSFER.PARAM_PREFERRED_NODE' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       ng-model="transferData.preferred_node"
+                       ng-model-options="{ debounce: 650 }"
+                       placeholder="{{'API.DOC.TRANSFER.PARAM_PREFERRED_NODE_HELP'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-arrow-return-left"></i>
+                {{'API.DOC.TRANSFER.PARAM_REDIRECT_URL' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       ng-model="transferData.redirect_url"
+                       ng-model-options="{ debounce: 650 }"placeholder="{{'API.DOC.TRANSFER.PARAM_REDIRECT_URL'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <i class="icon ion-backspace"></i>
+                {{'API.DOC.TRANSFER.PARAM_CANCEL_URL' | translate}} :
+              </p>
+              <label class="item item-input">
+                <input type="text"
+                       ng-model="transferData.cancel_url"
+                       ng-model-options="{ debounce: 650 }"
+                       placeholder="{{'API.DOC.TRANSFER.PARAM_CANCEL_URL'|translate}}">
+              </label>
+
+              <p class="padding-top">
+                <a class="positive" ng-click="transferButton.style.enable=!transferButton.style.enable">
+                  <i class="icon" ng-class="{'ion-android-checkbox-outline': transferButton.style.enable, 'ion-android-checkbox-outline-blank': !transferButton.style.enable}"></i>
+                  <span translate>API.DOC.TRANSFER.EXAMPLE_BUTTON_DEFAULT_STYLE</span>
+                </a>
+              </p>
+
+              <div ng-if="transferButton.style.enable">
+
+                <!-- button icon -->
+                <p class="padding-top">
+                  <i class="icon ion-image"></i>
+                  {{'API.DOC.TRANSFER.EXAMPLE_BUTTON_TEXT_ICON' | translate}} :
+                </p>
+                <label class="item item-input item-select">
+                  <select class="stable-bg dark"
+                          ng-model="transferButton.style.icon" style="width: 100%; max-width: 100%;"
+                          ng-options="l as (l.label | translate) for l in transferButton.icons track by l.filename">
+                  </select>
+                </label>
+
+                <!-- button text -->
+                <p class="padding-top">
+                  <i class="icon ion-quote"></i>
+                  {{'API.DOC.TRANSFER.EXAMPLE_BUTTON_TEXT_HELP' | translate}} :
+                </p>
+                <label class="item item-input">
+                  <input type="text"
+                         ng-model="transferButton.style.text"
+                         ng-model-options="{ debounce: 650 }"
+                         placeholder="{{'API.DOC.TRANSFER.EXAMPLE_BUTTON_TEXT_HELP'|translate}}">
+                </label>
+
+
+                <!-- button bg color -->
+                <p class="padding-top">
+                  <i class="icon ion-paintbucket"></i>
+                  {{'API.DOC.TRANSFER.EXAMPLE_BUTTON_BG_COLOR' | translate}} :
+                </p>
+                <label class="item item-input">
+                  <input type="text"
+                         ng-model="transferButton.style.bgColor"
+                         ng-model-options="{ debounce: 650 }"
+                         placeholder="{{'API.DOC.TRANSFER.EXAMPLE_BUTTON_BG_COLOR_HELP'|translate}}">
+                </label>
+
+                <!-- button font color -->
+                <p class="padding-top">
+                  <i class="icon ion-paintbrush"></i>
+                  {{'API.DOC.TRANSFER.EXAMPLE_BUTTON_FONT_COLOR' | translate}} :
+                </p>
+                <label class="item item-input">
+                  <input type="text"
+                         ng-model="transferButton.style.fontColor"
+                         ng-model-options="{ debounce: 650 }"
+                         placeholder="{{'API.DOC.TRANSFER.EXAMPLE_BUTTON_FONT_COLOR_HELP'|translate}}">
+                </label>
+
+                <!-- button width -->
+                <p class="padding-top">
+                  <i class="icon ion-ios-crop-strong"></i>
+                  {{'API.DOC.TRANSFER.EXAMPLE_BUTTON_TEXT_WIDTH' | translate}} :
+                </p>
+                <label class="item item-input">
+                  <input type="text"
+                         ng-model="transferButton.style.width"
+                         ng-model-options="{ debounce: 650 }"
+                         placeholder="{{'API.DOC.TRANSFER.EXAMPLE_BUTTON_TEXT_WIDTH_HELP'|translate}}">
+                </label>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

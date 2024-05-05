@@ -1,0 +1,7 @@
+<a href="#" class="{{type}}">
+  <i class="{{'cion-page-' + type}}"></i>
+  {{name != uid ? name +' ' : ''}}
+  <span class="gray">
+    {{pubkey ? (pubkey|formatPubkey) : ''}}
+  </span>
+</a>

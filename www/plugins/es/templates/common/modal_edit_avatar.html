@@ -1,0 +1,102 @@
+<ion-modal-view>
+  <ion-header-bar class="bar-positive">
+    <button class="button button-clear visible-xs visible-sm" ng-click="closeModal()" translate>COMMON.BTN_CANCEL</button>
+
+    <h1 class="title" translate>PROFILE.MODAL_AVATAR.TITLE</h1>
+
+    <button class="button button-clear icon-right visible-xs"
+            ng-click="doCrop()"
+            ng-disabled="formData.imageCropStep == 1"
+            ng-if="formData.imageCropStep <= 2">
+      <span translate>COMMON.BTN_NEXT</span>
+      <i class="icon ion-ios-arrow-right"></i>
+    </button>
+    <button class="button button-clear icon-right visible-xs"
+            ng-click="closeModal(formData.result)"
+            ng-if="formData.imageCropStep == 3">
+      <i class="icon ion-android-done"></i>
+    </button>
+  </ion-header-bar>
+
+  <ion-content class="modal-avatar padding">
+
+
+    <div ng-show="formData.imageCropStep == 1">
+
+      <p translate>PROFILE.MODAL_AVATAR.SELECT_FILE_HELP</p>
+
+      <!-- Add picture drop zone -->
+      <div drop-zone="onFileChanged(file)">
+        <div file-select="onFileChanged(file)" accept="image/*">
+          <i class="ion-image stable" style="font-size:150px"></i>
+          <b class="ion-plus gray" style="position:relative; font-size:80px; top:-51px; right: 19px;"></b>
+          <p class="gray" translate>COMMON.CHOOSE_FILE</p>
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="formData.imageCropStep == 2">
+      <p translate>PROFILE.MODAL_AVATAR.RESIZE_HELP</p>
+
+      <!-- <image-crop
+             data-height="200" //shape's height
+             data-width="150" //shape's width
+             data-shape="square" //the shape.. square or circle
+             data-step="imageCropStep"//scope variable that will contain the current step of the crop (1. Waiting for source image; 2. Image loaded, waiting for crop; 3. Crop done)
+             src="imgSrc" //scope variable that will be the source image for the crop (may be a Blob or base64 string)
+             data-result-blob="result" //scope variable that will contain the Blob information
+             data-result="resultDataUrl" //scope variable that will contain the image's base64 string representation
+             crop="initCrop" //scope variable that must be set to true when the image is ready to be cropped
+             padding="250" //space, in pixels, rounding the shape
+             max-size="1024" //max of the image, in pixels
+           ></image-crop> -->
+
+      <div class="item card text-center padding ink">
+        <image-crop
+          data-height="200"
+          data-width="200"
+          data-shape="circle"
+          data-step="formData.imageCropStep"
+          src="formData.imgSrc"
+          data-result="formData.result"
+          data-result-blob="formData.resultBlob"
+          crop="formData.initCrop"
+          padding="150"
+          max-size="1024">
+        </image-crop>
+      </div>
+    </div>
+
+    <div ng-show="formData.imageCropStep == 3">
+      <p translate>PROFILE.MODAL_AVATAR.RESULT_HELP</p>
+
+      <div class="item card padding hero" style="height: 110px;">
+        <div class="content">
+          <img class="avatar" ng-src="{{formData.result|trustAsHtml}}" style="height: 88px; width: 88px;">
+        </div>
+      </div>
+    </div>
+
+    <!-- buttons bar -->
+    <div class="padding hidden-xs text-right">
+      <button class="button button-clear button-dark ink" ng-click="closeModal()" type="button"
+              ng-if="formData.imageCropStep <= 2" translate>
+        COMMON.BTN_CANCEL
+      </button>
+      <button class="button button-stable icon-left ion-chevron-left ink" ng-click="doPrevious()" translate
+              ng-if="formData.imageCropStep >= 2">
+        COMMON.BTN_BACK
+      </button>
+      <button class="button button-calm icon-right ion-chevron-right ink" ng-click="doCrop()" translate
+              ng-disabled="formData.imageCropStep === 1"
+              ng-if="formData.imageCropStep <= 2">
+        COMMON.BTN_NEXT
+      </button>
+      <button class="button button-positive ink" ng-click="closeModal(formData.result)" translate
+              ng-if="formData.imageCropStep === 3">
+        COMMON.BTN_CONTINUE
+      </button>
+    </div>
+
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,73 @@
+<ion-view left-buttons="leftButtons"
+          cache-view="false">
+    <ion-nav-title bind-notifier="{ rebind:formData.useRelative }">
+      <span ng-if="!loading">
+         {{'CURRENCY.VIEW.TITLE' | translate}} {{formData.currency|abbreviate}}
+      </span>
+    </ion-nav-title>
+
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon button-clear icon ion-loop visible-xs visible-sm" ng-click="refreshPeers()">
+        </button>
+
+        <!-- Allow extension here -->
+        <cs-extension-point name="nav-buttons"></cs-extension-point>
+    </ion-nav-buttons>
+
+    <ion-content>
+
+      <!-- Buttons bar-->
+      <div class="hidden-xs hidden-sm padding text-center">
+
+
+        <button class="button button-stable icon-right ink"
+                ng-if="formData.licenseUrl"
+                ng-click="showLicenseModal()">
+          <i class="icon ion-document-text"></i>&nbsp;
+          {{'CURRENCY.VIEW.BTN_SHOW_LICENSE' | translate}}
+        </button>
+
+        <button class="button button-stable button-small-padding icon ion-loop ink"
+                ng-click="refresh()"
+                title="{{'COMMON.BTN_REFRESH' | translate}}">
+        </button>
+
+        <button class="button button-stable button-small-padding icon ion-android-more-vertical ink"
+                ng-click="showActionsPopover($event)">
+        </button>
+
+      </div>
+
+      <div class="item item-text-wrap no-border no-padding pull-left">
+        <div class="item-icon-left card padding stable-900-bg">
+          <ion-spinner class="icon" icon="android" ng-if="loading"></ion-spinner>
+          <i class="icon ion-help-circled calm" ng-if="!loading"></i>
+          <div class="item-icon-left-padding" style="min-height: 26px;">
+            <span ng-if="!loading"
+               trust-as-html="'CURRENCY.VIEW.CURRENCY_SHORT_DESCRIPTION'|translate:formData">
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row responsive-sm">
+        <!-- currency -->
+        <div class="col list">
+          <div class="item item-divider">
+            <span translate>CURRENCY.VIEW.MONEY_DIVIDER</span>
+          </div>
+          <ng-include src="::'templates/currency/items_parameters.html'"></ng-include>
+
+        </div>
+
+        <!-- wot -->
+        <div class="col list">
+          <div class="item item-divider">
+            <span translate>CURRENCY.VIEW.WOT_DIVIDER</span>
+          </div>
+          <ng-include src="::'templates/currency/items_wot.html'"></ng-include>
+
+        </div>
+      </div>
+    </ion-content>
+</ion-view>

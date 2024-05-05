@@ -1,0 +1,48 @@
+<div ng-if="!formData.profile"
+     class="item gray" translate>PROFILE.NO_PROFILE_DEFINED</div>
+
+<!-- name -->
+<div class="item" ng-if="formData.profile && formData.name && showName">
+  <span class="gray" translate>PROFILE.TITLE</span>
+  <h3>{{formData.name}}</h3>
+</div>
+
+<!-- About me -->
+<div class="item item-text-wrap" ng-if="formData.profile.descriptionHtml">
+  <span class="gray" translate>PROFILE.DESCRIPTION</span>
+  <h3 trust-as-html="formData.profile.descriptionHtml"></h3>
+</div>
+
+<!-- Localisation -->
+<div class="item" ng-if="formData.profile && (formData.profile.address || formData.profile.city)"
+     copy-on-click="{{formData.profile.address ? formData.profile.address + '&#10;' : ''}}{{formData.profile.city}}">
+  <span class="gray" translate>LOCATION.LOCATION_DIVIDER</span>
+  <h3>
+    <span class="text-keep-lines" ng-if="formData.profile.address">{{formData.profile.address}}<br/></span>
+    {{formData.profile.city}}
+  </h3>
+</div>
+
+<!-- Socials networks -->
+<div class="item" ng-if="formData.profile && formData.profile.socials && formData.profile.socials.length" ng-controller="ESSocialsViewCtrl">
+  <span class="gray" translate>PROFILE.SOCIAL_NETWORKS_DIVIDER</span>
+  <div class="list no-padding">
+    <ion-item ng-repeat="social in formData.profile.socials | filter:filterFn track by social.url "
+              id="social-{{::social.url|formatSlug}}"
+              class="item-icon-left item-text-wrap no-padding-bottom ink"
+              on-tap="openSocial($event, social)"
+              >
+      <i class="icon ion-social-{{social.type}}"
+         ng-class="{'ion-bookmark': social.type == 'other', 'ion-link': social.type == 'web', 'ion-email': social.type == 'email', 'ion-iphone': social.type == 'phone'}"></i>
+      <p ng-if="social.type && social.type != 'web'">
+        {{social.type}}
+        <i class="ion-locked" ng-if="social.recipient"></i>
+      </p>
+      <h4>
+        <a on-tap="openSocial($event, social)" href="{{::social.url}}" target="_blank">{{::social.url}}</a>
+      </h4>
+    </ion-item>
+  </div>
+</div>
+
+

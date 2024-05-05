@@ -1,0 +1,73 @@
+<ion-popover-view class="fit has-header popover-profile hidden-xs hidden-sm">
+  <ion-content scroll="false">
+    <div class="row">
+      <div class="col col-33">
+        <i class="avatar avatar-member" ng-if="!walletData.avatar" ng-class="{'royal-bg': login, 'stable-bg': !login}"></i>
+        <i class="avatar" ng-if="walletData.avatar" style="background-image: url('{{walletData.avatar.src}}')"></i>
+      </div>
+      <div class="col col-66" ng-if="login">
+        <h4>{{walletData.name||walletData.uid}}</h4>
+        <h4 class="gray"
+            ng-if="!walletData.name && !walletData.uid"
+            copy-on-click="{{walletData.pubkey}}">
+          <i class="icon ion-key"></i> {{walletData.pubkey|formatPubkey}}
+        </h4>
+        <span class="gray" ng-if="walletData.name||walletData.uid"
+              copy-on-click="{{walletData.pubkey}}">
+          <i class="icon ion-key"></i> {{walletData.pubkey|formatPubkey}}
+        </span>
+      </div>
+    </div>
+
+    <div class="row" ng-show="login">
+      <div class="col col-66 col-offset-33">
+
+        <!-- auth -->
+        <button ng-show="!auth"
+                class="button button-assertive button-small ink"
+                ng-click="doAuth()">
+          {{'AUTH.BTN_AUTH' | translate}}
+        </button>
+
+        <!-- Allow extension here -->
+        <cs-extension-point name="profile-popover-user"></cs-extension-point>
+      </div>
+    </div>
+
+    <div class="row" ng-show="!login">
+      <div class="col col-66 col-offset-33">
+        <div class="text-center no-padding gray">
+          {{'LOGIN.NO_ACCOUNT_QUESTION'|translate}}
+          <br class="visible-xs">
+          <b>
+            <button class="button button-calm button-small ink" ng-click="showJoinModal()">
+              {{'LOGIN.CREATE_ACCOUNT'|translate}}
+            </button>
+          </b>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="stable-bg row">
+    <div class="col">
+      <!-- settings -->
+      <button class="button button-raised button-block button-stable ink ink-dark"
+              id="helptip-popover-profile-btn-settings"
+              ng-click="showSettings()"
+              ui-sref="app.settings">
+        <i class="icon ion-android-settings"></i>
+        {{'MENU.SETTINGS' | translate}}
+      </button>
+    </div>
+    <div class="col">
+      <button class="button button-raised button-block button-stable ink ink-dark"
+              ng-show="login"
+              ng-click="logout()"
+              translate>COMMON.BTN_LOGOUT</button>
+      <button class="button button-raised button-block button-positive ink"
+              ng-show="!login"
+              ng-click="loginAndGo('app.view_wallet')"
+              translate>COMMON.BTN_LOGIN</button>
+    </div>
+  </ion-footer-bar>
+</ion-popover-view>

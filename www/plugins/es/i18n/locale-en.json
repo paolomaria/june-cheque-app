@@ -1,0 +1,584 @@
+{
+  "COMMON": {
+    "CATEGORY": "Category",
+    "CATEGORIES": "Categories",
+    "CATEGORY_SEARCH_HELP": "Search",
+    "COMMENT_HELP": "Comments",
+    "LAST_MODIFICATION_DATE": "Updated on ",
+    "SUBMIT_BY": "Submitted by",
+    "BTN_LIKE": "I like",
+    "BTN_LIKE_REMOVE": "I don't like anymore",
+    "LIKES_TEXT": "{{total}} {{total > 1 ? 'people' : 'person'}} liked this page",
+    "ABUSES_TEXT": "{{total}} {{total > 1 ? 'people' : 'person'}} reported a problem on this page",
+    "BTN_REPORT_ABUSE_DOTS": "Report a problem or an abuse...",
+    "BTN_REMOVE_REPORTED_ABUSE": "Cancel my problem report",
+    "BTN_PUBLISH": "Publish",
+    "BTN_PICTURE_DELETE": "Delete",
+    "BTN_PICTURE_FAVORISE": "Default",
+    "BTN_PICTURE_ROTATE": "Rotate",
+    "BTN_ADD_PICTURE": "Add picture",
+    "NOTIFICATION": {
+      "TITLE": "New notification | {{'COMMON.APP_NAME'|translate}}",
+      "HAS_UNREAD": "You have {{count}} unread notification{{count>0?'s':''}}"
+    },
+    "NOTIFICATIONS": {
+      "TITLE": "Notifications",
+      "MARK_ALL_AS_READ": "Mark all as read",
+      "NO_RESULT": "No notification",
+      "SHOW_ALL": "Show all",
+      "LOAD_NOTIFICATIONS_FAILED": "Could not load notifications"
+    },
+    "REPORT_ABUSE": {
+      "TITLE": "Report a problem",
+      "SUB_TITLE": "Please explain briefly the problem:",
+      "REASON_HELP": "I explain the problem...",
+      "ASK_DELETE": "Request removal?",
+      "CONFIRM": {
+        "SENT": "Request sent. Thank you!"
+      }
+    }
+  },
+  "MENU": {
+    "REGISTRY": "Pages",
+    "USER_PROFILE": "My Profile",
+    "MESSAGES": "Messages",
+    "NOTIFICATIONS": "Notifications",
+    "INVITATIONS": "Invitations"
+  },
+  "ACCOUNT": {
+    "NEW": {
+      "ORGANIZATION_ACCOUNT": "Account for an organization",
+      "ORGANIZATION_ACCOUNT_HELP": "If you represent a company, association, etc.<br/>No universal dividend will be created by this account."
+    },
+    "EVENT": {
+      "MEMBER_WITHOUT_PROFILE": "You can <a ui-sref=\"app.edit_profile\">fill your Cesium+ profile</a> (optional) to provide better visibility of your account. This profile will be stored in <b>a directory independent</b> of the currency, but decentralized."
+    },
+    "ERROR": {
+      "WS_CONNECTION_FAILED": "Cesium can not receive notifications because of a technical error (connection to the Cesium + data node).<br/><br/>If the problem persists, please <b>choose another data node</b> in Cesium+ settings."
+    }
+  },
+  "WOT": {
+    "BTN_SUGGEST_CERTIFICATIONS_DOTS": "Suggest identities to certify...",
+    "BTN_ASK_CERTIFICATIONS_DOTS": "Ask members to certify me...",
+    "BTN_ASK_CERTIFICATION": "Ask a certification",
+    "SUGGEST_CERTIFICATIONS_MODAL": {
+      "TITLE": "Suggest certifications",
+      "HELP": "Select your suggestions"
+    },
+    "ASK_CERTIFICATIONS_MODAL": {
+      "TITLE": "Ask certifications",
+      "HELP": "Select recipients"
+    },
+    "SEARCH": {
+      "DIVIDER_PROFILE": "Accounts",
+      "DIVIDER_PAGE": "Pages",
+      "DIVIDER_GROUP": "Groups"
+    },
+    "CONFIRM": {
+      "SUGGEST_CERTIFICATIONS": "Are you sure you want <b>to send these certification suggestions</b>?",
+      "ASK_CERTIFICATION": "Are you sure you want to <b>send a certification request</b>?",
+      "ASK_CERTIFICATIONS": "Are you sure you want to <b>send a certification request</b> to these people?"
+    }
+  },
+  "INVITATION": {
+    "TITLE": "Invitations",
+    "NO_RESULT": "No invitation received",
+    "BTN_DELETE_ALL": "Delete all invitations",
+    "BTN_DELETE": "Delete invitation",
+    "BTN_NEW_INVITATION": "New invitation",
+    "ASK_CERTIFICATION": "<a href=\"#/app/wot/{{pubkey}}/{{::uid}}\">{{::name||uid}}</a> asks for your certification",
+    "SUGGESTION_CERTIFICATION": "<a href=\"#/app/wot/{{::pubkey}}/{{::uid}}\">{{::name||uid}}</a> is suggested for certification",
+    "SUGGESTED_BY": "Suggestion sent by <a class=\"positive\" href=\"#/app/wot/{{::issuer.pubkey}}/{{::issuer.uid}}\">{{::issuer.name||issuer.uid}}</a>",
+    "NOTIFICATIONS": {
+      "TITLE": "Invitations"
+    },
+    "LIST": {
+      "TITLE": "Invitations"
+    },
+    "NEW": {
+      "TITLE": "New invitation",
+      "RECIPIENTS": "A",
+      "RECIPIENTS_HELP": "Recipients of the invitation",
+      "RECIPIENTS_MODAL_TITLE": "Recipients",
+      "RECIPIENTS_MODAL_HELP": "Please choose recipients:",
+      "SUGGESTION_IDENTITIES": "Suggestions for certification",
+      "SUGGESTION_IDENTITIES_HELP": "Certifications to suggest",
+      "SUGGESTION_IDENTITIES_MODAL_TITLE": "Suggestions",
+      "SUGGESTION_IDENTITIES_MODAL_HELP": "Please choose your suggestions:"
+    },
+    "CONFIRM": {
+      "DELETE_ALL_CONFIRMATION": "Removing invitations is <b>an irreversible operation</b>.<br/><br/><b>Are you sure</b> you want to continue",
+      "SEND_INVITATIONS_TO_CERTIFY": "<b>Are you sure</b> you want <b>to sent this invitation to certify</b> ?"
+    },
+    "INFO": {
+      "INVITATION_SENT": "Invitation sent"
+    },
+    "ERROR": {
+      "LOAD_INVITATIONS_FAILED": "Error while loading invitations",
+      "REMOVE_INVITATION_FAILED": "Error while deleting the invitation",
+      "REMOVE_ALL_INVITATIONS_FAILED": "Error while deleting invitations",
+      "SEND_INVITATION_FAILED": "Error while sending invitation",
+      "BAD_INVITATION_FORMAT": "<span class=\"assertive\"><i class=\"ion-close-circled\"></i> Invitation unreadable (format unknown)</span> - sent by <a ui-sref=\"app.wot_identity({pubkey: '{{::pubkey}}', uid: '{{::uid}}' })\">{{::name||uid}}</a>"
+    }
+  },
+  "COMMENTS": {
+    "DIVIDER": "Comments",
+    "SHOW_MORE_COMMENTS": "Show previous comments",
+    "COMMENT_HELP": "Your comment, question...",
+    "COMMENT_HELP_REPLY_TO": "Your answer...",
+    "BTN_SEND": "Send",
+    "POPOVER_SHARE_TITLE": "Message #{{number}}",
+    "REPLY": "Reply",
+    "REPLY_TO": "Respond to:",
+    "REPLY_TO_LINK": "In response to ",
+    "REPLY_TO_DELETED_COMMENT": "In response to a deleted comment",
+    "REPLY_COUNT": "{{replyCount}} responses",
+    "DELETED_COMMENT": "Comment deleted",
+    "MODIFIED_ON": "modified on {{time|formatDate}}",
+    "MODIFIED_PARENTHESIS": "(modified then)",
+    "ERROR": {
+      "FAILED_SAVE_COMMENT": "Saving comment failed",
+      "FAILED_REMOVE_COMMENT": "Deleting comment failed"
+    }
+  },
+  "MESSAGE": {
+    "REPLY_TITLE_PREFIX": "Re: ",
+    "FORWARD_TITLE_PREFIX": "Fw: ",
+    "BTN_REPLY": "Reply",
+    "BTN_COMPOSE": "New message",
+    "BTN_WRITE": "Write",
+    "NO_MESSAGE_INBOX": "No message received",
+    "NO_MESSAGE_OUTBOX": "No message sent",
+    "NOTIFICATIONS": {
+      "TITLE": "Messages",
+      "MESSAGE_RECEIVED": "You <b>received a message</b><br/>from"
+    },
+    "LIST": {
+      "INBOX": "Inbox",
+      "OUTBOX": "Outbox",
+      "LAST_INBOX": "New messages",
+      "LAST_OUTBOX": "Sent messages",
+      "BTN_LAST_MESSAGES": "Recent messages",
+      "TITLE": "Private messages",
+      "SEARCH_HELP": "Search in messages",
+      "POPOVER_ACTIONS": {
+        "TITLE": "Options",
+        "DELETE_ALL": "Delete all messages"
+      }
+    },
+    "COMPOSE": {
+      "TITLE": "New message",
+      "TITLE_REPLY": "Reply",
+      "SUB_TITLE": "New message",
+      "TO": "To",
+      "OBJECT": "Object",
+      "OBJECT_HELP": "Object",
+      "ENCRYPTED_HELP": "Please note this message will be encrypted before sending so that only the recipient can read it and be sure you are the author.",
+      "MESSAGE": "Message",
+      "MESSAGE_HELP": "Message content",
+      "CONTENT_CONFIRMATION": "No message content.<br/><br/>Are your sure you want to send this message?"
+    },
+    "VIEW": {
+      "TITLE": "Message",
+      "SENDER": "Sent by",
+      "RECIPIENT": "Sent to",
+      "NO_CONTENT": "Empty message",
+      "DELETE": "Delete the message"
+    },
+    "CONFIRM": {
+      "REMOVE": "Are you sure you want to <b>delete this message</b>?<br/><br/> This operation is irreversible.",
+      "REMOVE_ALL": "Are you sure you want to <b>delete all messages</b>?<br/><br/> This operation is irreversible.",
+      "MARK_ALL_AS_READ": "Are you sure you want to <b>mark all message as read</b>?",
+      "USER_HAS_NO_PROFILE": "This identity has no Cesium + profile. It may not use the Cesium + extension, so it <b>will not read your message</b>.<br/><br/>Are you sure you want <b>to continue</b>?"
+    },
+    "INFO": {
+      "MESSAGE_REMOVED": "Message successfully deleted",
+      "All_MESSAGE_REMOVED": "Messages successfully deleted",
+      "MESSAGE_SENT": "Message sent"
+    },
+    "ERROR": {
+      "SEND_MSG_FAILED": "Error while sending message.",
+      "LOAD_MESSAGES_FAILED": "Error while loading messages.",
+      "LOAD_MESSAGE_FAILED": "Error while loading message.",
+      "MESSAGE_NOT_READABLE": "Unable to read message.",
+      "USER_NOT_RECIPIENT": "You are not the recipient of this message: unable to read it.",
+      "NOT_AUTHENTICATED_MESSAGE": "The authenticity of the message is not certain or its content is corrupted.",
+      "REMOVE_MESSAGE_FAILED": "Error while deleting message",
+      "MESSAGE_CONTENT_TOO_LONG": "Value too long ({{maxLength}} characters max).",
+      "MARK_AS_READ_FAILED": "Unable to mark the message as 'read'.",
+      "LOAD_NOTIFICATIONS_FAILED": "Error while loading messages notifications.",
+      "REMOVE_All_MESSAGES_FAILED": "Error while removing all messages.",
+      "MARK_ALL_AS_READ_FAILED": "Error while marking messages as read.",
+      "RECIPIENT_IS_MANDATORY": "Recipient is mandatory."
+    }
+  },
+  "BLOCKCHAIN": {
+    "LOOKUP": {
+      "SEARCH_HELP": "Block number, hash...",
+      "POPOVER_FILTER_TITLE": "Filter",
+      "HEADER_MEDIAN_TIME": "Date / Time",
+      "HEADER_BLOCK": "Block #",
+      "HEADER_ISSUER": "Peer owner",
+      "BTN_LAST": "Last blocks",
+      "BTN_TX": "Transactions",
+      "DISPLAY_QUERY": "View query",
+      "HIDE_QUERY": "Hide query",
+      "TX_SEARCH_FILTER": {
+        "MEMBER_FLOWS": "<b class=\"ion-person\"></b> Members input/output",
+        "EXISTING_TRANSACTION": "<b class=\"ion-card\"></b> Having transactions",
+        "PERIOD": "<b class=\"ion-clock\"></b> Between <b class=\"gray\">{{params[1]|medianDateShort}}</b> ({{params[1]|medianTime}}) and <b class=\"gray\">{{params[2]|medianDateShort}}</b> ({{params[2]|medianTime}})",
+        "ISSUER": "<b class=\"ion-android-desktop\"></b> Computed by {{params[1]|formatPubkey}}",
+        "TX_PUBKEY": "<b class=\"ion-card\"></b> Transactions concerning <b class=\"ion-key\"></b> {{params[1]|formatPubkey}}"
+      }
+    },
+    "ERROR": {
+      "SEARCH_BLOCKS_FAILED": "Error while searching blocks."
+    }
+  },
+  "REGISTRY": {
+    "CATEGORY": "Main activity",
+    "GENERAL_DIVIDER": "Basic information",
+    "LOCATION_DIVIDER": "Address",
+    "SOCIAL_NETWORKS_DIVIDER": "Social networks, web sites",
+    "TECHNICAL_DIVIDER": "Technical data",
+    "BTN_SHOW_WOT": "People",
+    "BTN_SHOW_WOT_HELP": "Search for people",
+    "BTN_SHOW_PAGES": "Pages",
+    "BTN_SHOW_PAGES_HELP": "Search for pages",
+    "BTN_NEW": "New page",
+    "MY_PAGES": "My pages",
+    "NO_PAGE": "No page",
+    "SEARCH": {
+      "TITLE": "Pages",
+      "SEARCH_HELP": "What, Who: hairdresser, Lili's restaurant, ...",
+      "BTN_ADD": "New",
+      "BTN_LAST_RECORDS": "Recent pages",
+      "BTN_ADVANCED_SEARCH": "Advanced search",
+      "BTN_OPTIONS": "Advanced search",
+      "TYPE": "Kind of organization",
+      "LOCATION_HELP": "Where: City, Country",
+      "RESULTS": "Results",
+      "RESULT_COUNT_LOCATION": "{{count}} result{{count>0?'s':''}}, near {{location}}",
+      "RESULT_COUNT": "{{count}} result{{count>0?'s':''}}",
+      "LAST_RECORDS": "Recent pages",
+      "LAST_RECORD_COUNT_LOCATION": "{{count}} recent page{{count>0?'s':''}}, near {{location}}",
+      "LAST_RECORD_COUNT": "{{count}} recent page{{count>0?'s':''}}",
+      "POPOVER_FILTERS": {
+        "BTN_ADVANCED_SEARCH": "Advanced options?"
+      }
+    },
+    "VIEW": {
+      "TITLE": "Registry",
+      "CATEGORY": "Main activity:",
+      "LOCATION": "Address:",
+      "MENU_TITLE": "Options",
+      "POPOVER_SHARE_TITLE": "{{title}}",
+      "REMOVE_CONFIRMATION" : "Are you sure you want to delete this reference?<br/><br/>This is irreversible."
+    },
+    "TYPE": {
+      "TITLE": "New page",
+      "SELECT_TYPE": "Kind of organization:",
+      "ENUM": {
+        "SHOP": "Local shops",
+        "COMPANY": "Company",
+        "ASSOCIATION": "Association",
+        "INSTITUTION": "Institution"
+      }
+    },
+    "EDIT": {
+      "TITLE": "Edit",
+      "TITLE_NEW": "New page",
+      "RECORD_TYPE":"Kind of organization",
+      "RECORD_TITLE": "Name",
+      "RECORD_TITLE_HELP": "Name",
+      "RECORD_DESCRIPTION": "Description",
+      "RECORD_DESCRIPTION_HELP": "Describe activity",
+      "RECORD_ADDRESS": "Street",
+      "RECORD_ADDRESS_HELP": "Street, building...",
+      "RECORD_CITY": "City",
+      "RECORD_CITY_HELP": "City, Country",
+      "RECORD_SOCIAL_NETWORKS": "Social networks and web site",
+      "RECORD_PUBKEY": "Public key",
+      "RECORD_PUBKEY_HELP": "Public key to receive payments"
+    },
+    "WALLET": {
+      "PAGE_DIVIDER": "Pages",
+      "PAGE_DIVIDER_HELP": "Pages refer to activities accepting money or promoting it: local shops, companies, associations, institutions. They are stored outside the currency network, in <a ui-sref=\"app.es_network\">the Cesium+ network</a>."
+    },
+    "ERROR": {
+      "LOAD_CATEGORY_FAILED": "Loading main activities failed",
+      "LOAD_RECORD_FAILED": "Loading failed",
+      "LOOKUP_RECORDS_FAILED": "Error while loading records.",
+      "REMOVE_RECORD_FAILED": "Deleting failed",
+      "SAVE_RECORD_FAILED": "Saving failed",
+      "RECORD_NOT_EXISTS": "Record not found",
+      "GEO_LOCATION_NOT_FOUND": "City or zip code not found"
+    },
+    "INFO": {
+      "RECORD_REMOVED" : "Page successfully deleted",
+      "RECORD_SAVED": "Page successfully saved"
+    }
+  },
+  "PROFILE": {
+    "PROFILE_DIVIDER": "Cesium+ profile",
+    "PROFILE_DIVIDER_HELP": "These are ancillary data, stored outside the currency network, in <a ui-sref=\"app.es_network\">the Cesium+ network</a>.",
+    "NO_PROFILE_DEFINED": "No Cesium+ profile",
+    "BTN_ADD": "Create my profile",
+    "BTN_EDIT": "Edit my profile",
+    "BTN_DELETE": "Delete my profile",
+    "BTN_REORDER": "Reorder",
+    "UID": "Pseudonym",
+    "TITLE": "Lastname, FirstName",
+    "TITLE_HELP": "Name",
+    "DESCRIPTION": "About me",
+    "DESCRIPTION_HELP": "About me...",
+    "SOCIAL_HELP": "http://...",
+    "GENERAL_DIVIDER": "General data",
+    "SOCIAL_NETWORKS_DIVIDER": "Social networks and web site",
+    "TECHNICAL_DIVIDER": "Technical data",
+    "MODAL_AVATAR": {
+      "TITLE": "Avatar",
+      "SELECT_FILE_HELP": "<b>Choose an image file</b>:",
+      "BTN_SELECT_FILE": "Choose an image",
+      "RESIZE_HELP": "<b>Re-crop the image</b> if necessary. A click on the image allows to move it. Click on the area at the bottom left to zoom in.",
+      "RESULT_HELP": "<b>Here is the result</b> as seen on your profile:"
+    },
+    "CONFIRM": {
+      "DELETE": "Are you sure you want to <b>delete your Cesium+ profile ?</b><br/><br/>This operation is irreversible."
+    },
+    "ERROR": {
+      "REMOVE_PROFILE_FAILED": "Deleting profile failed",
+      "LOAD_PROFILE_FAILED": "Could not load user profile.",
+      "SAVE_PROFILE_FAILED": "Saving profile failed",
+      "INVALID_SOCIAL_NETWORK_FORMAT": "Invalid format: please fill a valid Internet address.<br/><br/>Examples :<ul><li>- A Facebook page (https://www.facebook.com/user)</li><li>- A web page (http://www.domain.com)</li><li>- An email address (joe@dalton.com)</li></ul>",
+      "IMAGE_RESIZE_FAILED": "Error while resizing picture"
+    },
+    "INFO": {
+      "PROFILE_REMOVED": "Profile deleted",
+      "PROFILE_SAVED": "Profile saved"
+    },
+    "HELP": {
+      "WARNING_PUBLIC_DATA": "Please note that the information published here <b>is public</b>: visible including by <b>not logged in people</b>.<br/>{{'PROFILE.PROFILE_DIVIDER_HELP'|translate}}"
+    }
+  },
+  "LOCATION": {
+    "BTN_GEOLOC_ADDRESS": "Find my address on the map",
+    "USE_GEO_POINT": "Appear on {{'COMMON.APP_NAME'|translate}} maps?",
+    "LOADING_LOCATION": "Searching address...",
+    "LOCATION_DIVIDER": "Localisation",
+    "ADDRESS": "Address",
+    "ADDRESS_HELP": "Address (optional)",
+    "CITY": "City",
+    "CITY_HELP": "City, Country",
+    "DISTANCE": "Maximum distance around the city",
+    "DISTANCE_UNIT": "mi",
+    "DISTANCE_OPTION": "{{value}} {{'LOCATION.DISTANCE_UNIT'|translate}}",
+    "SEARCH_HELP": "City, Country",
+    "PROFILE_POSITION": "Profile position",
+    "MODAL": {
+      "TITLE": "Search address",
+      "SEARCH_HELP": "City, Country",
+      "ALTERNATIVE_RESULT_DIVIDER": "Alternative results for <b>{{address}}</b>:",
+      "POSITION": "lat/lon : {{lat}} / {{lon}}"
+    },
+    "ERROR": {
+      "CITY_REQUIRED_IF_STREET": "Required if a street has been filled",
+      "REQUIRED_FOR_LOCATION": "Required field to appear on the map",
+      "INVALID_FOR_LOCATION": "Unknown address",
+      "GEO_LOCATION_FAILED": "Unable to retrieve your current position. Please use the search button.",
+      "ADDRESS_LOCATION_FAILED": "Unable to retrieve the address position"
+    }
+  },
+  "SUBSCRIPTION": {
+    "SUBSCRIPTION_DIVIDER": "Online services",
+    "SUBSCRIPTION_DIVIDER_HELP": "Online services offer optional additional services, delegated to a third party.",
+    "BTN_ADD": "Add a service",
+    "BTN_EDIT": "Manage my services",
+    "NO_SUBSCRIPTION": "No service defined",
+    "SUBSCRIPTION_COUNT": "Services / Subscription",
+    "EDIT": {
+      "TITLE": "Online services",
+      "HELP_TEXT": "Manage your subscriptions and other online services here",
+      "PROVIDER": "Provider:"
+    },
+    "TYPE": {
+      "ENUM": {
+        "EMAIL": "Receive email notifications"
+      }
+    },
+    "CONFIRM": {
+      "DELETE_SUBSCRIPTION": "Are you sur you want to <b>delete this subscription</b>?"
+    },
+    "ERROR": {
+      "LOAD_SUBSCRIPTIONS_FAILED": "Error while loading online services",
+      "ADD_SUBSCRIPTION_FAILED": "Error while adding subscription",
+      "UPDATE_SUBSCRIPTION_FAILED": "Error during subscription update",
+      "DELETE_SUBSCRIPTION_FAILED": "Error while deleting subscription"
+    },
+    "MODAL_EMAIL": {
+      "TITLE" : "Notification by email",
+      "HELP" : "Fill out this form to <b>be notified by email</ b> of your account's events. <br/>Your email address will be encrypted only to be visible to the service provider.",
+      "EMAIL_LABEL" : "Your email:",
+      "EMAIL_HELP": "john@domain.com",
+      "FREQUENCY_LABEL": "Frequency of notifications:",
+      "FREQUENCY_DAILY": "Daily",
+      "FREQUENCY_WEEKLY": "Weekly",
+      "PROVIDER": "Service Provider:"
+    }
+  },
+  "DOCUMENT": {
+    "HASH": "Hash: ",
+    "LOOKUP": {
+      "TITLE": "Document search",
+      "BTN_ACTIONS": "Actions",
+      "SEARCH_HELP": "issuer:AAA*, time:1508406169",
+      "LAST_DOCUMENTS_DOTS": "Last documents:",
+      "LAST_DOCUMENTS": "Last documents",
+      "SHOW_QUERY": "Show query",
+      "HIDE_QUERY": "Hide query",
+      "HEADER_TIME": "Time/Hour",
+      "HEADER_ISSUER": "Issuer",
+      "HEADER_RECIPIENT": "Recipient",
+      "HEADER_AMOUNT": "Amount",
+      "READ": "Read",
+      "BTN_REMOVE": "Delete this document",
+      "BTN_COMPACT": "Compact",
+      "HAS_CREATE_OR_UPDATE_PROFILE": "create or edit his profile",
+      "POPOVER_ACTIONS": {
+        "TITLE": "Actions",
+        "REMOVE_ALL": "Delete these documents..."
+      }
+    },
+    "INFO": {
+      "REMOVED": "Deleted document"
+    },
+    "CONFIRM": {
+      "REMOVE": "Are you sure you want to <b>delete this document</b>?",
+      "REMOVE_ALL": "Are you sure you want to <b>delete these documents</b>?"
+    },
+    "ERROR": {
+      "LOAD_DOCUMENTS_FAILED": "Error searching documents",
+      "REMOVE_FAILED": "Error deleting the document",
+      "REMOVE_ALL_FAILED": "Error deleting documents"
+    }
+  },
+  "ES_SETTINGS": {
+    "PLUGIN_NAME": "Cesium+",
+    "PLUGIN_NAME_HELP": "User profiles, notifications, private messages",
+    "ENABLE_TOGGLE": "Enable extension?",
+    "ENABLE_REMOTE_STORAGE": "Enable remote storage for settings?",
+    "ENABLE_REMOTE_STORAGE_HELP": "Enables (encrypted) storage of your settings on Cesium + nodes",
+    "ENABLE_MESSAGE_TOGGLE": "Enable private messages?",
+    "PEER": "Data peer address",
+    "POPUP_PEER": {
+      "TITLE" : "Data peer",
+      "HELP" : "Set the address of the peer to use:",
+      "PEER_HELP": "server.domain.com:port"
+    },
+    "NOTIFICATIONS": {
+      "DIVIDER": "Notifications",
+      "HELP_TEXT": "Enable the types of notifications you want to receive:",
+      "ENABLE_TX_SENT": "Notify the validation of <b>sent payments</b>?",
+      "ENABLE_TX_RECEIVED": "Notify the validation of <b>received payments</b>?",
+      "ENABLE_CERT_SENT": "Notify the validation of <b>sent certifications</b>?",
+      "ENABLE_CERT_RECEIVED": "Notify the validation of <b>received certifications</b>?",
+      "ENABLE_HTML5_NOTIFICATION": "Warn with each new notification?",
+      "ENABLE_HTML5_NOTIFICATION_HELP": "Opens a small popup window with each new notification."
+    },
+    "CONFIRM": {
+      "ASK_ENABLE_TITLE": "Optional features",
+      "ASK_ENABLE": "Cesium+ extension is <b>disabled</b> in your settings, making some features inactive: <ul><li>&nbsp;&nbsp;<b><i class=\"icon ion-person\"></i> user profiles</b>;<li>&nbsp;&nbsp;<b><i class=\"icon ion-android-notifications\"></i> Notifications</b>;<li>&nbsp;&nbsp;<b><i class=\"icon ion-email\"></i> Private messages</b>.</ul><br/><br/><b>Do you want to enable</b> the extension?"
+    }
+  },
+  "ES_WALLET": {
+    "ERROR": {
+      "RECIPIENT_IS_MANDATORY": "A recipient is required for encryption."
+    },
+    "ES_PEER": {
+      "NAME": "Name",
+      "DOCUMENTS": "Documents",
+      "SOFTWARE": "Software",
+      "DOCUMENT_COUNT": "Number of documents",
+      "EMAIL_SUBSCRIPTION_COUNT": "{{emailSubscription}} subscribers to email notification"
+    }
+  },
+  "EVENT": {
+    "NODE_STARTED": "Your node ES API <b>{{params[0]}}</b> is UP",
+    "NODE_BMA_DOWN": "Node <b>{{params[0]}}:{{params[1]}}</b> (used by your ES API) is <b>unreachable</b>.",
+    "NODE_BMA_UP": "Node <b>{{params[0]}}:{{params[1]}}</b> is reachable again.",
+    "MEMBER_JOIN": "You are now a <b>member</b> of currency <b>{{params[0]}}</b>!",
+    "MEMBER_LEAVE": "You are <b>not a member anymore</b> of currency <b>{{params[0]}}</b>!",
+    "MEMBER_EXCLUDE": "You are <b>not more member</b> of the currency <b>{{params[0]}}</b>, for lack of renewal or lack of certifications.",
+    "MEMBER_REVOKE": "Your account has been revoked. It will no longer be a member of the currency <b>{{params[0]}}</b>.",
+    "MEMBER_ACTIVE": "Your membership to <b>{{params[0]}}</b> has been <b>renewed successfully</b>.",
+    "TX_SENT": "Your payment to <span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid}\" ><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> was executed.",
+    "TX_SENT_MULTI": "Your payment to <b>{{params[1]}}</b> was executed.",
+    "TX_RECEIVED": "You received a payment from <span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid}\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span>.",
+    "TX_RECEIVED_MULTI": "You received a payment from <b>{{params[1]}}</b>.",
+    "CERT_SENT": "Your <b>certification</b> to <span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid}\" ><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> was executed.",
+    "CERT_RECEIVED": "You  have <b>received a certification</b> from <span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid}\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span>.",
+    "USER": {
+      "LIKE_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> like your profile",
+      "FOLLOW_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> follows your activity",
+      "STAR_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> rated you ({{params[3]}} <i class=\"ion-star\">)",
+      "MODERATION_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> asks you for a moderation on the profile: <b>{{params[2]}}</b><br/><b class=\"dark ion-quote\"> </b><span class=\"text-italic\">{{params[3]}}</span>",
+      "DELETION_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> reported a profile to be deleted: <b>{{params[2]}}</b><br/><b class=\"dark ion-quote\"> </b><span class=\"text-italic\">{{params[3]}}</span>",
+      "ABUSE_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has requested moderation on your profile"
+    },
+    "PAGE": {
+      "NEW_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has commented on your referencing: <b>{{params[2]}}</b>",
+      "UPDATE_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has modified his comment on your referencing: <b>{{params[2]}}</b>",
+      "NEW_REPLY_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has replied to your comment on the referencing: <b>{{params[2]}}</b>",
+      "UPDATE_REPLY_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has modified his answer to your comment, on the referencing: <b>{{params[2]}}</b>",
+      "FOLLOW_NEW_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has commented on the page: <b>{{params[2]}}</b>",
+      "FOLLOW_UPDATE_COMMENT": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has modified his comment on the page: <b>{{params[2]}}</b>",
+      "FOLLOW_NEW": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> added a page: <b>{{params[2]}}</b>",
+      "FOLLOW_UPDATE": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> updated the page: <b>{{params[2]}}</b>",
+      "MODERATION_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> asks you for a moderation on the page: <b>{{params[2]}}</b><br/><b class=\"dark ion-quote\"> </b><span class=\"text-italic\">{{params[3]}}</span>",
+      "DELETION_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> reported a page to be deleted: <b>{{params[2]}}</b><br/><b class=\"dark ion-quote\"> </b><span class=\"text-italic\">{{params[3]}}</span>",
+      "ABUSE_RECEIVED": "<span ng-class=\"{'gray': !notification.uid, 'positive':notification.uid }\"><i class=\"icon\" ng-class=\"{'ion-person': notification.uid, 'ion-key': !notification.uid}\"></i>&thinsp;{{name||uid||params[1]}}</span> has requested moderation on your page: <b>{{params[2]}}</b>"
+    }
+  },
+  "LIKE": {
+    "ERROR": {
+      "FAILED_TOGGLE_LIKE": "Unable to execute this action."
+    }
+  },
+  "CONFIRM": {
+    "ES_USE_FALLBACK_NODE": "Data node <b>{{old}}</b> unreachable or invalid address.<br/><br/>Do you want to temporarily use the data node <b>{{new}}</b>?"
+  },
+  "ERROR": {
+    "ES_CONNECTION_ERROR": "Data node <b>{{server}}</b> unreachable or invalid address.<br/><br/>Cesium will continue to work, <b>without the Cesium+</b> extension (user profiles, private messages, maps and graphics).<br/><br/>Check your Internet connection, or change data node in <a class=\"positive\" ng-click=\"doQuickFix('settings')\">extension settings</a>.",
+    "ES_MAX_UPLOAD_BODY_SIZE": "The volume of data to be sent exceeds the limit set by the server.<br/><br/>Please try again after, for example, deleting photos."
+  },
+  "ADMIN": {
+    "MESSAGE": {
+      "BTN_SEND_EMAIL": "Send a Group Email"
+    },
+    "LOG": {
+      "BTN_SHOW_LOG": "Blocked IP Logs",
+      "VIEW": {
+        "TITLE": "Logs",
+        "TIME": "Date",
+        "REQUEST_PATH": "Path",
+        "REQUEST_METHOD": "Method",
+        "INET_ADDRESS": "IP Address",
+        "ITEMS_DIVIDER": "List of Blocked Requests"
+      }
+    },
+    "MODERATOR": {
+      "BTN_SHOW_MODERATORS": "View Moderators",
+      "VIEW": {
+        "TITLE": "Moderators",
+        "MODERATORS_DIVIDER": "List of Moderators"
+      }
+    },
+    "ERROR": {
+      "NO_SSL_ACCESS": "Access Denied Due to SSL Restrictions.",
+      "LOAD_LOG_FAILED": "Failed to Read Logs.",
+      "LOAD_MODERATORS_FAILED": "Failed to Read Moderators.",
+      "AUTH_ERROR": "Authentication Error with Pod"
+    }
+  }
+
+}

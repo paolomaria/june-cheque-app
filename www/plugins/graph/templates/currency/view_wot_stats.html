@@ -1,0 +1,14 @@
+<ion-view left-buttons="leftButtons"
+          cache-view="false">
+
+  <ion-content scroll="true" >
+
+    <div class="center padding" ng-if="loading">
+      <ion-spinner icon="android"></ion-spinner>
+    </div>
+
+    <ng-include
+      ng-if="!loading"
+      src="'plugins/graph/templates/currency/graph_members_count.html'" ></ng-include>
+  </ion-content>
+  </ion-view>

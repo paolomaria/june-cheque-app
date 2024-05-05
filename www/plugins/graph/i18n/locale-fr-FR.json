@@ -1,0 +1,135 @@
+{
+  "NETWORK": {
+    "VIEW": {
+      "BTN_GRAPH": "Statistiques"
+    }
+  },
+  "GRAPH": {
+    "COMMON": {
+      "LINEAR_SCALE" : "Echelle linéaire",
+      "LOGARITHMIC_SCALE" : "Echelle logarithmique",
+      "BTN_SHOW_STATS": "Voir les statistiques",
+      "BTN_SHOW_DETAILED_STATS": "Statistiques détaillées",
+      "RANGE_DURATION_DIVIDER": "Unité de temps :",
+      "RANGE_DURATION": {
+        "HOUR": "Heure",
+        "DAY": "Jour",
+        "MONTH": "Mois"
+      },
+      "MAX_AGE": {
+        "DAY": "Depuis 24h",
+        "WEEK": "Depuis une semaine",
+        "MONTH": "Depuis un mois",
+        "QUARTER": "Depuis 3 mois",
+        "SEMESTER": "Depuis 6 mois",
+        "YEAR": "Depuis un an",
+        "FOREVER": "Depuis toujours"
+      }
+    },
+    "ACCOUNT": {
+      "TITLE": "Statistiques",
+      "BTN_SHOW_STATS": "Voir les statistiques du compte",
+      "BALANCE_DIVIDER": "Situation du compte",
+      "BALANCE_TITLE": "Evolution du compte {{pubkey|formatPubkey}}",
+      "TX_RECEIVED_LABEL": "Recettes",
+      "TX_SENT_LABEL": "Dépenses",
+      "TX_ACCUMULATION_LABEL": "Bilan des transactions",
+      "UD_LABEL": "DU",
+      "UD_ACCUMULATION_LABEL": "Bilan des DU",
+      "BALANCE_LABEL": "Solde",
+      "WOT_DIVIDER": "Toile de confiance",
+      "CERTIFICATION_TITLE": "Nombre de certifications - {{pubkey|formatPubkey}}",
+      "RECEIVED_CERT_LABEL": "Total reçues",
+      "RECEIVED_CERT_DELTA_LABEL": "Variation reçues",
+      "GIVEN_CERT_LABEL": "Total envoyées",
+      "GIVEN_CERT_DELTA_LABEL": "Variation envoyées",
+      "INPUT_CHART_TITLE": "Somme des flux entrants, par émetteur :",
+      "OUTPUT_CHART_TITLE": "Somme des flux sortants, par destinaire :"
+    },
+    "BLOCKCHAIN": {
+      "TITLE": "Statistiques",
+      "BLOCKS_ISSUERS_DIVIDER": "Analyse de la répartition du calcul",
+      "BLOCKS_ISSUERS_HELP": "<b>{{issuerCount|formatInteger}} membres</b> ont calculé <b>{{blockCount|formatInteger}} blocs</b>",
+      "BLOCKS_ISSUERS_TITLE": "Nombre de blocs calculés par membre",
+      "BLOCKS_ISSUERS_LABEL": "Nombre de blocs",
+      "TX_DIVIDER": "Analyse des transactions",
+      "TX_AMOUNT_TITLE": "Volume des transactions {{currency|abbreviate}}",
+      "TX_AMOUNT_PUBKEY_TITLE": "Volume des transactions calculées par {{issuer | formatPubkey}}",
+      "TX_AMOUNT_LABEL": "Volume échangé",
+      "TX_COUNT_TITLE": "Nombre de transactions écrites",
+      "TX_COUNT_LABEL": "Nombre de transactions",
+      "TX_AVG_BY_BLOCK": "Nombre moyen de transactions / bloc"
+    },
+    "CURRENCY": {
+      "MONETARY_MASS_TITLE": "Evolution de la masse monétaire",
+      "MONETARY_MASS_LABEL": "Masse monétaire",
+      "MONETARY_MASS_SHARE_LABEL": "Moyenne par membre",
+      "UD_TITLE": "Evolution du dividende universel",
+      "MEMBERS_COUNT_TITLE": "Evolution du nombre de membres",
+      "MEMBERS_COUNT_LABEL": "Nombre de membres",
+      "MEMBERS_DELTA_TITLE": "Variation du nombre de membres",
+      "IS_MEMBER_DELTA_LABEL": "Prises en compte d'adhésion",
+      "WAS_MEMBER_DELTA_LABEL": "Pertes d'adhésion",
+      "PENDING_DELTA_LABEL": "Demandes d'adhésion"
+    },
+    "PEER": {
+      "VIEW": {
+        "BLOCK_COUNT_LABEL": "Nombre de blocs calculés",
+        "BLOCK_COUNT": "{{count}} blocs",
+        "NO_BLOCK": "Aucun bloc"
+      }
+    },
+    "DOC_STATS": {
+      "TITLE": "Statistiques de stockage",
+      "USER": {
+        "TITLE": "Nombre de documents liés à un compte",
+        "USER_PROFILE": "Profils utilisateur",
+        "USER_SETTINGS": "Paramètres sauvegardés"
+      },
+      "USER_DELTA": {
+        "TITLE": "Variation du nombre de documents liés à un compte",
+        "USER_PROFILE": "Profils utilisateur",
+        "USER_SETTINGS": "Paramètres sauvegardés"
+      },
+      "MESSAGE": {
+        "TITLE": "Nombre de documents liés à la communication",
+        "MESSAGE_INBOX": "Messages en boîte de réception",
+        "MESSAGE_OUTBOX": "Messages envoyés sauvegardés",
+        "INVITATION_CERTIFICATION": "Invitations à certifier"
+      },
+      "SOCIAL": {
+        "TITLE": "Nombre de pages ou groupes",
+        "PAGE_COMMENT": "Commentaires",
+        "PAGE_RECORD": "Pages",
+        "GROUP_RECORD": "Groupes"
+      },
+      "OTHER": {
+        "TITLE": "Autres documents",
+        "HISTORY_DELETE": "Suppressions de documents"
+      }
+    },
+    "SYNCHRO": {
+      "TITLE": "Statistiques de synchronisations",
+      "COUNT": {
+        "TITLE": "Volume synchronisé",
+        "INSERTS": "Insertions",
+        "UPDATES": "Mises à jour",
+        "DELETES": "Suppressions"
+      },
+      "PEER": {
+        "TITLE": "Noeuds requêtés",
+        "ES_USER_API": "Noeuds avec données utilisateurs",
+        "ES_SUBSCRIPTION_API": "Noeuds avec services en ligne"
+      },
+      "PERFORMANCE": {
+        "TITLE": "Performances d'exécution",
+        "DURATION": "Temps d'exécution (ms)"
+      }
+    },
+    "NETWORK": {
+      "TITLE": "Statistiques réseau",
+      "ENDPOINT_COUNT_TITLE": "Nombre de points d'accès",
+      "ENDPOINT_DELTA_TITLE": "Variation du nombre de points d'accès"
+    }
+  }
+}

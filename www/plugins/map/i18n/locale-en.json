@@ -1,0 +1,76 @@
+{
+  "MAP": {
+    "COMMON": {
+      "SEARCH_DOTS": "Search...",
+      "BTN_LOCALIZE_ME": "Localize me"
+    },
+    "NETWORK": {
+      "LOOKUP": {
+        "BTN_MAP": "Peers map",
+        "BTN_MAP_HELP": "Open peers map"
+      },
+      "VIEW": {
+        "TITLE": "Peers map",
+        "LAYER": {
+          "MEMBER": "Member peers",
+          "MIRROR": "Mirror peers",
+          "OFFLINE": "Offline peers"
+        }
+      }
+    },
+    "WOT": {
+      "LOOKUP": {
+        "BTN_MAP": "Map",
+        "BTN_MAP_HELP": "Open members map"
+      },
+      "VIEW": {
+        "TITLE": "Members map",
+        "LAYER": {
+          "MEMBER": "<i class=\"icon ion-person positive\"></i> Members",
+          "PENDING": "<i class=\"icon ion-clock energized\"></i> Pending registrations",
+          "WALLET": "<i class=\"icon ion-card gray\"></i> Simple wallets"
+        }
+      },
+      "ERROR": {
+        "LOAD_POSITION_FAILED": "Can not retrieve the positions to display."
+      }
+    },
+    "REGISTRY": {
+      "LOOKUP": {
+        "BTN_MAP": "Map",
+        "BTN_MAP_HELP": "Open the map of the pages"
+      },
+      "VIEW": {
+        "TITLE": "Map of pages",
+        "LAYER": {
+          "SHOP": "<i class=\"icon ion-page-shop positive\"></i> Local shops",
+          "COMPANY": "<i class=\"icon ion-page-company positive\"></i> Companies",
+          "ASSOCIATION": "<i class=\"icon ion-page-association energized\"></i> Associations",
+          "INSTITUTION": "<i class=\"icon ion-page-institution gray\"></i> Institutions"
+        }
+      }
+    },
+    "PROFILE": {
+      "MARKER_HELP": "<b>Drag and drop</b> this marker to <b>update<br/>your position</b>, or use the buttons<br/>on top of the map."
+    },
+    "ERROR": {
+      "LOCALIZE_ME_FAILED": "Unable to retrieve your current position"
+    },
+    "SETTINGS": {
+      "MAP_DIVIDER": "Maps",
+      "ENABLE_GOOGLE_API": "Enable Google API services?",
+      "ENABLE_GOOGLE_API_HELP": "In the <b>members map</b>, allows you to display accounts with an address but without geolocation.",
+      "GOOGLE_API_KEY": "Google API key",
+      "BTN_GOOGLE_API": "Getting a key",
+      "BTN_GOOGLE_API_WARNING": "requires a Google account",
+      "GOOGLE_API_KEY_PLACEHOLDER": "eg: AIzaqyAgszvWm0tM81x1sMK_ipDHBI7EowLqR7I"
+    },
+    "HELP": {
+      "TIP": {
+        "WOT": "This map displays <b>profiles with a position</b>, whether they are member accounts or not.<br/><br/>Only profiles with the option &quot;appear on the map&quot; has been activated.",
+        "WOT_BTN_LAYERS": "<b>Filter the displayed data</b>: members, pending registrations, simple portfolios, etc.",
+        "WOT_BTN_SEARCH": "You can <b>search</b> by name, public key, or member pseudonym."
+      }
+    }
+  }
+}

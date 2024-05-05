@@ -1,0 +1,70 @@
+<ion-popover-view class="fit has-header popover-wallet-actions">
+  <ion-header-bar>
+    <h1 class="title" translate>COMMON.POPOVER_ACTIONS_TITLE</h1>
+  </ion-header-bar>
+  <ion-content scroll="false">
+    <div class="list item-text-wrap">
+
+      <a class="item item-icon-left ink visible-xs visible-sm"
+         ng-click="showSharePopover($event)">
+        <i class="icon ion-android-share-alt"></i>
+        {{'COMMON.BTN_SHARE' | translate}}
+      </a>
+
+      <!-- alternatives identities -->
+      <a class="item item-icon-left ink"
+         ng-if="walletData.requirements.alternatives"
+         ng-click="showSelectIdentitiesModal()">
+        <i class="icon ion-person"></i>
+        <b class="icon-secondary ion-loop" style="margin-top: 4px; left: 15px;"></b>
+        {{'ACCOUNT.BTN_SELECT_ALTERNATIVES_IDENTITIES' | translate}}
+      </a>
+
+      <!-- renew membership -->
+      <!-- (show only if a SELF has been sent - fix #673) -->
+      <a class="item item-icon-left ink visible-xs visible-sm"
+         ng-if="!walletData.requirements.needSelf && walletData.requirements.needRenew"
+         ng-click="renewMembership()">
+        <i class="icon ion-loop"></i>
+        {{'ACCOUNT.BTN_MEMBERSHIP_RENEW_DOTS' | translate}}
+      </a>
+      <a class="item item-icon-left ink hidden-xs hidden-sm"
+         ng-if="!walletData.requirements.needSelf && !walletData.requirements.hasBadSelfBlock && !walletData.requirements.revoked"
+         ng-class="{'gray':!walletData.requirements.needRenew}"
+         ng-click="renewMembership()">
+        <i class="icon ion-loop"></i>
+        {{'ACCOUNT.BTN_MEMBERSHIP_RENEW_DOTS' | translate}}
+      </a>
+      <a class="item item-icon-left ink hidden-xs hidden-sm"
+         ng-if="walletData.requirements.hasBadSelfBlock"
+         ng-click="fixMembership()">
+        <i class="icon ion-loop"></i>
+        {{'ACCOUNT.BTN_FIX_MEMBERSHIP' | translate}}
+      </a>
+
+      <a class="item item-icon-left assertive ink"
+              ng-if="walletData.requirements.canMembershipOut"
+              ng-click="membershipOut()">
+        <i class="icon ion-log-out"></i>
+        {{'ACCOUNT.BTN_MEMBERSHIP_OUT_DOTS' | translate}}
+      </a>
+
+      <a class="item item-icon-left ink"
+         ng-click="showSecurityModal()">
+        <i class="icon ion-locked "></i>
+        <span ng-bind-html="'ACCOUNT.BTN_SECURITY_DOTS' | translate"></span>
+
+      </a>
+
+      <div class="item-divider hidden-sm hidden-xs"></div>
+
+      <!-- help tour -->
+      <a class="item item-icon-left ink hidden-sm hidden-xs"
+         ng-if="isDefaultWallet"
+         ng-click="startWalletTour()">
+        <i class="icon ion-easel"></i>
+        {{'COMMON.BTN_HELP_TOUR_SCREEN' | translate}}
+      </a>
+    </div>
+  </ion-content>
+</ion-popover-view>

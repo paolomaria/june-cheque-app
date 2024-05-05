@@ -1,0 +1,47 @@
+<ion-content class="has-header padding" >
+  <p translate>ACCOUNT.SECURITY.REVOCATION_WITH_FILE_HELP</p>
+
+  <div drop-zone="onFileChanged(file)">
+    <div ng-if="!hasContent" file-select="onFileChanged(file)" accept=".txt">
+      <h2 class="gray" translate>COMMON.CHOOSE_FILE</h2>
+    </div>
+
+    <div ng-if="hasContent" class="item item-icon-left item-icon-right">
+      <i class="icon ion-document-text dark"></i>
+      <div class="row">
+        <div class="col">
+          <h2>{{fileData.name}}</h2>
+          <h4 ng-if="fileData.lastModified">
+            <span class="gray" translate>COMMON.FILE.DATE</span> {{fileData.lastModified/1000|formatDate}}
+          </h4>
+          <h5>
+            <span class="gray" translate>COMMON.FILE.SIZE</span> {{fileData.size|formatInteger}} Ko
+          </h5>
+        </div>
+        <div class="col padding-left">
+          <h3 class="assertive animate-show-hide ng-hide" ng-show="!isValidFile"><br/>
+            <i class="ion-close-circled assertive"></i>
+            {{revocationError|translate}}
+          </h3>
+        </div>
+      </div>
+
+      <!-- remove file button -->
+      <a class="ion-close-round gray pull-right" style="font-size: 10px; position: absolute; top: 6px; right: 6px;"
+         ng-click="restore()"></a>
+    </div>
+  </div>
+
+  <div class="padding hidden-xs text-right">
+    <button class="button button-clear button-dark ink" ng-click="closeModal()"
+            type="button" translate>COMMON.BTN_CANCEL
+    </button>
+    <button class="button button-calm icon-right ion-chevron-right ink"
+            ng-click="revokeWithFile()" translate>
+      COMMON.BTN_NEXT
+      <i class="icon ion-arrow-right-a"></i>
+    </button>
+  </div>
+</ion-content>
+
+
