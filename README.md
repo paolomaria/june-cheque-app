@@ -12,6 +12,29 @@ Only the unhosted web application package has been tested.
 
 **IMPORTANT**: this project is still experimental. Use it at your own risk !!
 
+## Build
+
+After checking out the project, got to the june-cheque-app directory and call:
+```
+nvm use 16
+npm install -g yarn 
+yarn
+```
+
+Once build, you can start the application via:
+```
+yarn run start
+```
+
+## Install
+
+Once built, you can create a compressed ZIP artifact with:
+```
+gulp webBuild --release
+```
+A ZIP archive will be visible dist/web/build/june-cheque-app-vx.y.z.zip.
+
+In order to publish it, decompress the web archive, then open the ìndex.html file in your web browser.
 
 ## Donate
 
