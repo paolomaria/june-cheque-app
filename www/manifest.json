@@ -1,10 +1,10 @@
 {
-  "short_name": "Cesium",
-  "name": "Cesium",
+  "short_name": "June-Cheque",
+  "name": "June-Cheque",
   "manifest_version": 1,
-  "version": "1.7.13",
+  "version": "0.0.1",
   "default_locale": "fr",
-  "description": "Cesium Wallet for Ğ1 libre currency",
+  "description": "Cash your cheques for a libre currency.",
   "icons": [
     {
       "src": "img/logo_32px.png",

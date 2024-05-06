@@ -1,8 +1,8 @@
 {
-  "name": "Cesium",
-  "short_name": "Cesium",
-  "version": "1.7.13",
-  "description": "Manage your Duniter Wallet on a libre currency, like Ğ1",
+  "name": "June-Cheque",
+  "short_name": "June-Cheque",
+  "version": "0.0.1",
+  "description": "Cash your cheques for a libre currency, like Ğ1",
   "background": {
     "scripts": ["background.js"]
   },

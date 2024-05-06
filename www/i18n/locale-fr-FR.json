@@ -1,6 +1,6 @@
 {
   "COMMON": {
-    "APP_NAME": "Cesium",
+    "APP_NAME": "June-Cheque-App",
     "APP_VERSION": "v{{version}}",
     "APP_BUILD": "date : {{build}}",
     "PUBKEY": "Clé publique",
@@ -439,7 +439,7 @@
     }
   },
   "LOGIN": {
-    "TITLE": "<i class=\"icon ion-log-in\"></i> Connexion",
+    "TITLE": "<i class=\"icon ion-log-in\"></i> Identifiants du chèque",
     "SCRYPT_FORM_HELP": "Veuillez saisir vos identifiants.<br>Pensez à vérifier que la clé publique est celle de votre compte.",
     "CHEQUE_FORM_HELP": "Veuillez saisir les identifiants du chèque.",
     "PUBKEY_FORM_HELP": "Veuillez saisir une clé publique de compte :",

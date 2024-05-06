@@ -9,105 +9,12 @@
 
     <div class="list item-wrap-text">
       <ion-item class="item-icon-left item-text-wrap">
-        <span>{{'COMMON.APP_NAME'|translate}}&nbsp;<b>{{'COMMON.APP_VERSION'|translate:$root.config}}</b> - <a ng-click="openLink($event, 'http://cesium.app')">www.cesium.app</a></span>
+        <span>{{'COMMON.APP_NAME'|translate}}&nbsp;<b>{{'COMMON.APP_VERSION'|translate:$root.config}}</b> - <a ng-click="openLink($event, 'https://github.com/paolomaria/june-cheque')">github.com/paolomaria/june-cheque</a></span>
         <i ng-if="$root.newRelease" class="assertive ion-alert-circled"></i>
         <h3 ng-if="buildDate" class="gray">{{'COMMON.APP_BUILD'|translate:{build: buildDate} }}</h3>
         <span translate>ABOUT.LICENSE</span>
       </ion-item>
 
-      <!-- new version -->
-      <ion-item class="item-icon-left" ng-if="$root.newRelease">
-        <i class="item-image icon ion-alert-circled assertive"></i>
-
-        <span ng-if="!$root.device.isWeb()" ng-bind-html="'ABOUT.PLEASE_UPDATE' | translate:$root.newRelease "></span>
-        <span ng-if="$root.device.isWeb()" ng-bind-html="'ABOUT.LATEST_RELEASE' | translate:$root.newRelease "></span>
-
-        <!-- link to release page -->
-        <h3 ng-if="!$root.device.enable">
-          <a ng-click="openLink($event, $root.newRelease.url)" translate>{{::$root.newRelease.url}}</a>
-        </h3>
-      </ion-item>
-
-      <!-- official web site -->
-      <ion-item class="item-icon-left item-text-wrap">
-        <i class="item-image icon ion-android-laptop"></i>
-        <span translate>ABOUT.OFFICIAL_WEB_SITE</span>
-        <h3>
-          <a ng-click="openLink($event, 'https://www.cesium.app')">https://www.cesium.app</a>
-        </h3>
-      </ion-item>
-
-      <div class="item item-divider no-border">
-        <p translate>ABOUT.USER_HELP_DIVIDER</p>
-      </div>
-
-      <!-- forum -->
-      <ion-item class="item-icon-left">
-        <i class="item-image icon ion-chatbubbles"></i>
-        {{'ABOUT.USER_FORUM' | translate}}
-        <h3><a ng-click="openLink($event, $root.settings.userForumUrl)">{{::$root.settings.userForumUrl}}</a></h3>
-      </ion-item>
-      <ion-item class="item-icon-left">
-        <i class="item-image icon ion-telegram"></i>
-        {{'ABOUT.TELEGRAM' | translate}}
-        <h3><a ng-click="openLink($event, $root.settings.userTelegramUrl)">{{::$root.settings.userTelegramUrl}}</a></h3>
-      </ion-item>
-
-      <div class="item item-divider no-border">
-        <p translate>ABOUT.CONTRIBUTE_DIVIDER</p>
-      </div>
-
-      <!-- report issue -->
-      <ion-item class="item-icon-left item-text-wrap">
-        <i class="item-image icon ion-bug"></i>
-        <span translate>ABOUT.PLEASE_REPORT_ISSUE</span>
-        <h3>
-          <a ng-click="openLink($event, $root.settings.newIssueUrl)" translate>ABOUT.REPORT_ISSUE</a>
-        </h3>
-      </ion-item>
-
-      <!-- source code -->
-      <ion-item class="item-icon-left">
-        <i class="item-image icon ion-network"></i>
-        {{'ABOUT.CODE' | translate}}
-        <h3><a ng-click="openLink($event, $root.settings.sourceUrl)">{{$root.settings.sourceUrl}}</a></h3>
-      </ion-item>
-
-      <!-- tech forum -->
-      <ion-item class="item-icon-left">
-        <i class="item-image icon ion-chatbubbles"></i>
-        {{'ABOUT.TECH_FORUM' | translate}}
-        <h3><a ng-click="openLink($event, $root.settings.techForumUrl)">{{::$root.settings.techForumUrl}}</a></h3>
-      </ion-item>
-
-      <!-- team -->
-      <ion-item class="item-icon-left item-text-wrap">
-        <i class="item-image icon ion-person-stalker"></i>
-        {{'ABOUT.DEVELOPERS' | translate}}
-        <h3>
-          <a href="https://github.com/blavenie" target="_system">Benoit Lavenier</a>,
-          <a href="https://github.com/bpresles" target="_system">bpresles</a>,
-          <a href="https://github.com/c-geek" target="_system">cgeek</a>,
-          <a href="https://github.com/devingfx" target="_system">DiG</a>,
-          <a href="https://git.duniter.org/ji_emme" target="_system">Ji_emme</a>,
-          <a href="https://git.duniter.org/matograine" target="_system">matograine</a>,
-          <a href="https://github.com/duniter/cesium/graphs/contributors" target="_system" title="{{'HOME.SHOW_ALL_FEED'|translate}}">...</a>
-        </h3>
-      </ion-item>
-
-      <div class="padding hidden-xs text-center">
-        <button class="button button-stable icon-left ink" type="submit"
-                ng-click="closeModal()"
-                ui-sref="app.help">
-          <i class="icon ion-ios-help-outline"></i>
-          {{'HOME.BTN_HELP' | translate}}
-        </button>
-
-        <button class="button button-positive ink" type="submit"
-                ng-click="closeModal()">
-          {{'COMMON.BTN_CLOSE' | translate}}
-        </button>
-      </div>
 
     </div>
   </ion-content>

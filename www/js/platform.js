@@ -558,6 +558,7 @@ angular.module('cesium.platform', ['ngIdle', 'cesium.config', 'cesium.services']
       // Get latest release
       csPlatform.version.latest()
         .then(function(release) {
+		/** skip for now
           if (release && release.isNewer) {
             console.info('[app] New release detected [{0}]'.format(release.version));
             $rootScope.newRelease = release;
@@ -565,6 +566,7 @@ angular.module('cesium.platform', ['ngIdle', 'cesium.config', 'cesium.services']
           else {
             console.info('[app] Current version [{0}] is the latest release'.format(csConfig.version));
           }
+		 **/
         });
 
       // Prevent BACK button to exit without confirmation
