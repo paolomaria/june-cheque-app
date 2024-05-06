@@ -94,13 +94,7 @@ function HomeController($scope, $state, $timeout, $interval, $ionicHistory, $tra
           $scope.loadingPct = 100;
           $scope.$broadcast('$$rebind::loading'); // force rebind loading
           $scope.$broadcast('$$rebind::feed'); // force rebind feed
-
-          // Open the login modal
-          if (hasLoginParam && !csWallet.isLogin() && !$scope.error) {
-            $scope.cleanLocationHref(state);
-
-            return csWallet.login();
-          }
+		  csWallet.logout();
         });
     }
   };

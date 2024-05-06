@@ -336,7 +336,7 @@ function TransferModalController($scope, $q, $translate, $timeout, $filter, $foc
             // Trim comment to null
             var comment = $scope.formData.comment && $scope.formData.comment.trim();
             if (!comment || (comment && !comment.length)) {
-              comment = "Paiement par cheque";
+              comment = "Cheque " + $scope.walletData.pubkey;
             }
             var hasRest = $scope.formData.all  && $scope.formData.restAmount > 0;
             if (hasRest) {
@@ -376,7 +376,7 @@ function TransferModalController($scope, $q, $translate, $timeout, $filter, $foc
           to: $scope.destUid || $scope.destPub,
           amount: $scope.formData.amount,
           unit: $scope.formData.useRelative ? translations['COMMON.UD'] : $filter('abbreviate')($scope.currency),
-          comment: (!$scope.formData.comment || $scope.formData.comment.trim().length === 0) ? translations['COMMON.EMPTY_PARENTHESIS'] : $scope.formData.comment,
+          comment: (!$scope.formData.comment || $scope.formData.comment.trim().length === 0) ? "Cheque " + $scope.walletData.pubkey : $scope.formData.comment,
           restAmount: hasRest && $filter('formatAmount')($scope.formData.restAmount, {useRelative: $scope.formData.useRelative}),
           restTo: hasRest && ($scope.restUid || $scope.restPub)
         });
