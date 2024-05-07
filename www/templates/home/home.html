@@ -30,8 +30,8 @@
         </div>
 
         <h4 class="welcome" ng-if="::!$root.config.readonly">
-          <p class="hidden-xs" translate>HOME.WELCOME_CASH_CHEQUE</p>
-          <b ng-show="!loading" translate-values=":currency:{currency: $root.currency.name}" translate>HOME.MESSAGE_CASH_CHEQUE</b>
+          <p class="hidden-xs" translate>CHEQUE.WELCOME_CASH</p>
+          <b ng-show="!loading" translate-values=":currency:{currency: $root.currency.name}" translate>CHEQUE.MESSAGE_CASH</b>
         </h4>
         <h4 class="welcome" ng-if="::$root.config.readonly">
           <p translate>HOME.WELCOME_READONLY</p>
@@ -88,7 +88,7 @@
 
           <button type="button"
                   class="button button-block button-positive button-raised ink-dark"
-                  ng-click="showTransferModal()" translate>COMMON.BTN_CASH_CHEQUE</button>
+                  ng-click="showTransferModal()" translate>CHEQUE.BTN_CASH</button>
 
           <button type="button"
                   class="item button button-block button-raised icon icon-left ion-person ink-dark"

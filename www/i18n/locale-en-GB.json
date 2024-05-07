@@ -713,6 +713,18 @@
       "TITLE": "Transfer"
     }
   },
+  "CHEQUE": {
+    "AMOUNT": "Value of the cheque",    
+    "AMOUNT_HELP": "The amount written on the cheque",    
+    "BTN_CASH": "Cash a cheque",
+    "WELCOME_CASH": "Welcome to the June-Cheques application!",
+    "MESSAGE_CASH": "Cash a cheque in the libre currency {{currency|abbreviate}}",
+    "FORM_HELP": "Please enter the credentilals of the cheque.",
+    "SALT": "Secret identifier of the cheque",
+    "SALT_HELP": "For example ABCD-12345",
+    "PASSWORD": "Password of the cheque,",
+    "PASSWORD_HELP": "For example XyzA-a3Bc",
+  },
   "ERROR": {
     "UNKNOWN_URI_FORMAT": "Unknown URI format",
     "PUBKEY_INVALID_CHECKSUM": "Invalid public key (bad checksum).",

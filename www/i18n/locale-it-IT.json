@@ -714,6 +714,18 @@
       "TITLE": "Bonifico"
     }
   },
+  "CHEQUE": {
+    "AMOUNT": "Valore del' assegno",    
+    "AMOUNT_HELP": "Il valore scritto sul assegno",    
+    "BTN_CASH": "Incassare un assegno",
+    "WELCOME_CASH": "Benvenuti all'applicazione June-Cheques!",
+    "MESSAGE_CASH": "Incassa un assegno nella valuta libera {{currency|abbreviate}}",
+    "FORM_HELP": "Scrivi i dati del assegno.",
+    "SALT": "Identificativo segreto del assegno",
+    "SALT_HELP": "Per esempio ABCD-12345",
+    "PASSWORD": "Password del assegno,",
+    "PASSWORD_HELP": "Per esempio XyzA-a3Bc",
+  },
   "ERROR": {
     "UNKNOWN_URI_FORMAT": "Formato URI sconosciuto",
     "PUBKEY_INVALID_CHECKSUM": "Chiave pubblica non valida (checksum errato).",
