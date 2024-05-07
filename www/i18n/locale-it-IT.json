@@ -724,7 +724,7 @@
     "SALT": "Identificativo segreto del assegno",
     "SALT_HELP": "Per esempio ABCD-12345",
     "PASSWORD": "Password del assegno,",
-    "PASSWORD_HELP": "Per esempio XyzA-a3Bc",
+    "PASSWORD_HELP": "Per esempio XyzA-a3Bc"
   },
   "ERROR": {
     "UNKNOWN_URI_FORMAT": "Formato URI sconosciuto",

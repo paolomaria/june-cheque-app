@@ -567,7 +567,7 @@
     "SALT": "Secret identifier of the cheque",
     "SALT_HELP": "For example ABCD-12345",
     "PASSWORD": "Password of the cheque,",
-    "PASSWORD_HELP": "For example XyzA-a3Bc",
+    "PASSWORD_HELP": "For example XyzA-a3Bc"
   },
   "ERROR": {
     "POPUP_TITLE": "Error",
