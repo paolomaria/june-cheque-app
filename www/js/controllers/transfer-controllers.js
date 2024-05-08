@@ -175,6 +175,7 @@ function TransferModalController($scope, $q, $translate, $timeout, $filter, $foc
     if (!wallet.isDefault()) {
       console.debug("[transfer] Using wallet {{0}}".format(wallet.id));
     }
+	wallet.logout();
     // Make to sure to load full wallet data (balance)
     return wallet.login({sources: true, silent: true})
       .then(function(data) {
@@ -208,7 +209,10 @@ function TransferModalController($scope, $q, $translate, $timeout, $filter, $foc
         }
       })
       .catch(function(err){
-        if (err === 'CANCELLED') return $scope.cancel(); // close the modal
+        if (err === 'CANCELLED') {
+			wallet.logout();
+			return $scope.cancel(); // close the modal
+		}
         UIUtils.onError('ERROR.LOGIN_FAILED')(err);
       });
   };
@@ -362,7 +366,10 @@ function TransferModalController($scope, $q, $translate, $timeout, $filter, $foc
     .catch(function(err) {
       $scope.sending = false;
       // Wallet auth cancelled by user
-      if (err === 'CANCELLED') return;
+      if (err === 'CANCELLED') {
+		wallet.logout();
+	  	return;
+	  }
       UIUtils.onError('ERROR.SEND_TX_FAILED')(err);
     });
   };

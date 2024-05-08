@@ -50,40 +50,6 @@
         <a class="badge badge-balanced badge-app-mode right visible-readonly" ng-click="showHelpModal('readonly')">{{:locale:'MODE.READONLY.BADGE'|translate}}</a>
       </h1>
 
-      <div class="visible-sm visible-xs hero">
-        <div class="content">
-          <i class="avatar avatar-member hero-icon" ng-if="!walletData.avatar" ng-class="{'royal-bg': login, 'stable-bg': !login}"
-             ng-click="loginAndGo()" menu-close></i>
-          <a class="avatar hero-icon" ng-if="walletData.avatar" style="background-image: url('{{walletData.avatar.src}}')" ui-sref="app.view_wallet" menu-close></a>
-          <h4 ng-if="login">
-            <a class="light" ui-sref="app.view_wallet" menu-close>
-              {{walletData.name||walletData.uid}}
-              <span ng-if="!walletData.name && !walletData.uid"><i class="icon ion-key"></i>&nbsp;{{walletData.pubkey|formatPubkey}}</span>
-            </a>
-          </h4>
-          <h4 ng-if="!login">
-            <a class="light" ng-click="loginAndGo()" menu-close>
-              {{'COMMON.BTN_LOGIN'|translate}}
-              <i class="ion-arrow-right-b"></i>
-            </a>
-          </h4>
-          <cs-extension-point name="menu-profile-user"></cs-extension-point>
-        </div>
-
-        <!-- removeIf(device) -->
-        <!-- Fullscreen button -->
-        <a ng-if="::$root.device.isWeb()"
-           ng-click="toggleFullscreen()"
-           class="button-icon"
-           style="position: absolute; top: 5px; right: 5px; z-index: 999;">
-          <i class="icon ion-arrow-expand dark" ng-class="{'ion-arrow-shrink': fullscreen}"></i>
-        </a>
-        <!-- endRemoveIf(device) -->
-
-
-      </div>
-
-
     </ion-header-bar>
 
 
@@ -126,17 +92,6 @@
           <i class="icon ion-home"></i>
           {{:locale:'MENU.HOME'|translate}}
         </ion-item>
-
-        <!-- ************ -->
-        <!-- User Section -->
-        <!-- ************ -->
-        <div class="item item-divider hidden-readonly"></div>
-
-
-        <div class="item item-divider visible-xs visible-sm hidden-readonly" ></div>
-
-        <!-- Allow extension here -->
-        <cs-extension-point name="menu-user" ></cs-extension-point>
 
         <!-- *************** -->
         <!-- Actions section -->
@@ -184,15 +139,6 @@
 
         <div class="item item-divider visible-xs visible-sm"></div>
 
-
-        <a menu-close
-           class="item item-icon-left visible-xs visible-sm"
-           active-link="active"
-           active-link-path-prefix="#/app/help"
-           ui-sref="app.help">
-          <i class="icon ion-ios-help-outline"></i>
-          {{:locale:'HOME.BTN_HELP'|translate}}
-        </a>
 
         <a menu-close
            class="item item-icon-left visible-xs visible-sm visible-readonly"

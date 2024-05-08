@@ -90,51 +90,6 @@
                   class="button button-block button-positive button-raised ink-dark"
                   ng-click="showTransferModal()" translate>CHEQUE.BTN_CASH</button>
 
-          <button type="button"
-                  class="item button button-block button-raised icon icon-left ion-person ink-dark"
-                  ng-class="{'button-stable': smallscreen, 'button-positive': !smallscreen}"
-                  ui-sref="app.view_wallet" ng-show="login" translate>MENU.ACCOUNT</button>
-
-          <button type="button"
-                  class="item button button-block button-stable button-raised icon icon-left ion-card ink-dark visible-xs"
-                  ui-sref="app.view_wallet_tx" ng-if="login">
-            <b class="icon-secondary ion-clock" style="left: 52px; top: -2px; font-size: 10pt; display: block;"></b>
-            <span translate>MENU.TRANSACTIONS</span>
-          </button>
-
-          <br class="visible-xs visible-sm"/>
-
-          <!-- disconnect link -->
-          <div class="text-center no-padding" ng-show="login">
-            <br class="visible-xs visible-sm"/>
-            <span ng-bind-html="'HOME.NOT_YOUR_ACCOUNT_QUESTION'|translate:{pubkey: walletData.pubkey}"></span>
-            <br/>
-            <b>
-              <a class="assertive" ng-click="logout({askConfirm: true})" translate>
-                HOME.BTN_CHANGE_ACCOUNT
-              </a>
-            </b>
-          </div>
-
-          <!-- login (small screen) -->
-          <button type="button"
-                  class="button button-block button-stable button-raised ink visible-xs visible-sm"
-                  ui-sref="app.view_wallet" ng-if="!$root.config.readonly && !login" translate>COMMON.BTN_LOGIN</button>
-
-          <!-- Help if readonly or demo mode -->
-          <div class="text-center visible-demo">
-            <br/>
-            <p class="text-center">
-              <span class="light"><i class="icon ion-help-circled" style="font-size: 16pt;"></i></span>
-              <span class="stable" translate>MODE.DEMO.MODE_HELP</span>
-              <a href="#" ng-click="showHelpModal('demo')" translate>HOME.READ_MORE</a>
-            </p>
-          </div>
-          <p class="text-center no-padding visible-readonly">
-            <br/>
-            <span class="light"><i class="icon ion-help-circled " style="font-size: 16pt;"></i></span>
-            <span class="stable" translate>MODE.READONLY.INSTALL_HELP</span>
-          </p>
 
 
         </div>
