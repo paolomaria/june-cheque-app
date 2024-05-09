@@ -736,9 +736,9 @@
     "MESSAGE_CASH": "Einen Scheck in der freien Währung {{currency|abbreviate}} einlösen",
     "FORM_HELP": "Zugangsdaten des Schecks eingeben.",
     "SALT": "Geheimer Benutzername des Schecks",
-    "SALT_HELP": "Zum Beispiel ABCD-12345",
+    "SALT_HELP": "Geheimer Benutzername des Schecks, zum Beispiel ABCD-12345",
     "PASSWORD": "Passwort des Schecks,",
-    "PASSWORD_HELP": "Zum Beispiel XyzA-a3Bc"
+    "PASSWORD_HELP": "Passwort des Schecks, zum Beispiel XyzA-a3Bc"
   },
   "ERROR": {
     "UNKNOWN_URI_FORMAT": "Unbekanntes URI Format",

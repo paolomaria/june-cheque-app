@@ -724,9 +724,9 @@
     "MESSAGE_CASH": "Encaisser un chèque de la monnaie libre {{currency|abbreviate}}",
     "FORM_HELP": "Veuillez saisir les identifiants du chèque.",
     "SALT": "Identifiant secret du chèque",
-    "SALT_HELP": "Par exemple ABCD-12345",
+    "SALT_HELP": "Identifiant secret du chèque, par exemple ABCD-12345",
     "PASSWORD": "Mot de passe du chèque,",
-    "PASSWORD_HELP": "Par exemple XyzA-a3Bc"
+    "PASSWORD_HELP": "Mot de passe du chèque, par exemple XyzA-a3Bc"
   },
   "ERROR": {
     "UNKNOWN_URI_FORMAT": "Format d'URI inconnu",
