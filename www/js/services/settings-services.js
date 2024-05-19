@@ -77,8 +77,8 @@ angular.module('cesium.settings.services', ['ngApi', 'cesium.config'])
     minVersion: '1.8.0',
     minVersionAtStartup: '1.8.7', // use for node auto-selection
     minConsensusPeerCount: 10, // use for node auto-selection (avoid to start if no few peers found)
-    sourceUrl: 'https://git.duniter.org/clients/cesium-grp/cesium',
-    sourceLicenseUrl: 'https://git.duniter.org/clients/cesium-grp/cesium/-/raw/master/LICENSE',
+    sourceUrl: 'https://github.com/paolomaria/june-cheque-app',
+    sourceLicenseUrl: 'https://github.com/paolomaria/june-cheque-app/-/raw/main/LICENSE',
     newIssueUrl: "https://git.duniter.org/clients/cesium-grp/cesium/issues/new",
     userForumUrl: "https://forum.monnaie-libre.fr",
     userTelegramUrl: "https://t.me/monnaielibrejune",

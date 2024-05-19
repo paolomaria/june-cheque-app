@@ -1,10 +1,10 @@
 {
   "name": "june-cheques",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "June-cheque cash for G1 libre currency",
   "author": "Paolo Ganci <paolo@ganci.ch>",
   "license": "AGPL-3.0",
-  "homepage": "https://cesium.app",
+  "homepage": "https://info.g-c.li/",
   "repository": {
     "type": "git",
     "url": "git@git.duniter.org:clients/cesium/cesium.git"
