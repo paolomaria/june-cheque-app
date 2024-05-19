@@ -9,7 +9,7 @@ is_installed() {
 CESIUM_DIR=${1:-$(pwd)/cesium}
 
 latest_version() {
-  echo "v1.0.0" # lastest
+  echo "v1.0.1" # lastest
 }
 
 api_release_url() {
