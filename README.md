@@ -1,4 +1,4 @@
-![Cesium logo](https://github.com/duniter/cesium/raw/master/www/img/logo_144px.png)
+![Cesium logo](https://github.com/paolomaria/june-cheque-app/raw/main/www/img/logo_144px.png)
 
 # June-Cheque-App
 
