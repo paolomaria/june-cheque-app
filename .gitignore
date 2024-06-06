@@ -30,6 +30,7 @@ yarn.lock
 /www/js/config.js
 /www/dist
 /www/lib
+/www/js/config-test.js
 
 # Generated CSS
 /www/css/ionic.app.css
