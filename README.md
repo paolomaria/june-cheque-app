@@ -19,6 +19,7 @@ After checking out the project, got to the june-cheque-app directory and call:
 nvm use 16
 npm install -g yarn 
 yarn
+gulp config
 ```
 
 Once build, you can start the application via:
