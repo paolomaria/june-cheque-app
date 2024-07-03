@@ -1,4 +1,4 @@
-name: Test debian package creation
+name: Test zip package creation
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
 jobs:
   release_package:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.build-release == 'true' }}
 
     steps:
 
