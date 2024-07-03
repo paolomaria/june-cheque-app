@@ -11,7 +11,7 @@ CLIENT
 	__Content-Type: application/x-www-form-urlencoded
 	__user-agent: curl/7.81.0
 	__
-	_-{"tag_name":"release/${VERSION}","target_commitish":"${RELEASE_BRANCH}","name":"v${VERSION}","prerelease":${PRE_RELEASE},"generate_release_notes":false}
+	_-{"tag_name":"release/${VERSION}","target_commitish":"${RELEASE_BRANCH}","name":"${VERSION}","prerelease":${PRE_RELEASE},"generate_release_notes":false}
 	_MATCH body "\"id\": ([^,]*)" RELEASE_ID
 	_WAIT
 	_CLOSE
