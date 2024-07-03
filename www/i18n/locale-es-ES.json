@@ -800,16 +800,16 @@
     }
   },
   "CHEQUE": {
-    "AMOUNT": "Value of the cheque",    
-    "AMOUNT_HELP": "The amount written on the cheque",    
-    "BTN_CASH": "Cash a cheque",
-    "WELCOME_CASH": "Welcome to the June-Cheques application!",
-    "MESSAGE_CASH": "Cash a cheque in the libre currency {{currency|abbreviate}}",
-    "FORM_HELP": "Please enter the credentilals of the cheque.",
-    "SALT": "Secret identifier of the cheque",
-    "SALT_HELP": "Secret identifier of the cheque, for example ABCD-12345",
-    "PASSWORD": "Password of the cheque,",
-    "PASSWORD_HELP": "Password of the cheque, for example XyzA-a3Bc"
+    "AMOUNT": "Valor del cheque",    
+    "AMOUNT_HELP": "El valor escrito sobre el cheque",    
+    "BTN_CASH": "Cobrar el cheque",
+    "WELCOME_CASH": "¡Bienvenidos en la aplicación June-Cheques!",
+    "MESSAGE_CASH": "Cobrar un cheque en la moneda libre {{currency|abbreviate}}",
+    "FORM_HELP": "Introduzca los identificadores del cheque.",
+    "SALT": "Usuario secreto del cheque",
+    "SALT_HELP": "Usuario secreto del cheque, por ejemplo ABCD-12345",
+    "PASSWORD": "Contraseña del cheque,",
+    "PASSWORD_HELP": "Contraseña del cheque, por ejemplo XyzA-a3Bc"
   },
   "ERROR": {
     "ADD_SECONDARY_WALLET_FAILED": "Error añadiendo el monedero secundario.",
