@@ -33,7 +33,7 @@ Once built, you can create a compressed ZIP artifact with:
 ```
 gulp webBuild --release
 ```
-A ZIP archive will be visible dist/web/build/june-cheque-app-vx.y.z.zip.
+A ZIP archive will be visible dist/web/build/june-cheque-app-vx.y.z-web.zip.
 
 In order to publish it, decompress the web archive, then open the ìndex.html file in your web browser.
 

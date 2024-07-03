@@ -1,4 +1,4 @@
-name: Test debian package creation
+name: Test zip package creation
 
 on:
   workflow_dispatch:
@@ -6,7 +6,6 @@ on:
 jobs:
   release_package:
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.build-release == 'true' }}
 
     steps:
 
@@ -19,16 +18,16 @@ jobs:
       run: |
            sudo apt-get install git wget curl unzip build-essential software-properties-common ruby ruby-dev ruby-ffi gcc make
            wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
-
-    - name: install nvm
-      run: |
+           export NVM_DIR="$HOME/.nvm"
+           [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+           [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
            nvm install 16
            npm install -g yarn gulp cordova @ionic/cli@6.20.9 web-ext
 
     - name: build everything
       run: |
-        cd june-cheque-app
-        yarn
+           cd june-cheque-app
+           yarn
            gulp config
 
     - name: create the package
@@ -43,7 +42,7 @@ jobs:
     - name: release the package
       run: |
         cd june-cheque-app
-        VERSION=v1.0.2 RELEASE_BRANCH=$GITHUB_REF_NAME httest pkg/release.htt
+        VERSION=v1.0.2 RELEASE_BRANCH=$GITHUB_REF_NAME httest pkg/release.htt > httest.log
       env:
         GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
 
