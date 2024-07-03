@@ -1,7 +1,7 @@
 {
   "name": "June-Cheque",
   "short_name": "June-Cheque",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Cash your cheques for a libre currency, like Ğ1",
   "background": {
     "scripts": ["background.js"]
