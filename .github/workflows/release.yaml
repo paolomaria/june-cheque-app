@@ -42,7 +42,7 @@ jobs:
     - name: release the package
       run: |
         cd june-cheque-app
-        VERSION=v1.0.2 RELEASE_BRANCH=$GITHUB_REF_NAME httest pkg/release.htt
+        VERSION=v1.0.2 RELEASE_BRANCH=$GITHUB_REF_NAME httest pkg/release.htt > httest.log
       env:
         GITHUB_TOKEN: ${{ secrets.SECRET_TOKEN }}
 
