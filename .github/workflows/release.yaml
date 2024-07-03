@@ -30,7 +30,7 @@ jobs:
       run: |
         cd june-cheque-app
         yarn
-		gulp config
+           gulp config
 
     - name: create the package
       run: |
