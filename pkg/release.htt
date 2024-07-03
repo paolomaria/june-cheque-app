@@ -28,7 +28,7 @@ CLIENT
 	__Content-Type: application/octet-stream
 	__user-agent: curl/7.81.0
 	__
-	_SENDFILE dist/web/build/june-cheque-app-${VERSION}.zip
+	_SENDFILE dist/web/build/june-cheque-app-${VERSION}-web.zip
 	_EXPECT headers "201 Created"
 	_WAIT
 	_CLOSE
